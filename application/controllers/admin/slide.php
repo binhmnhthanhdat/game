@@ -218,7 +218,7 @@ class Slide extends Admin_controller {
                 $data['image'] = '';
             }
         } // End upload file
-        if ($id >0) {
+        if ($id > 0) {
 
             if ($this->slide->updateImage($id, $data)) {
                 $this->session->set_flashdata('warning', 'Cập nhật Danh mục thành công');
@@ -227,8 +227,8 @@ class Slide extends Admin_controller {
                 $this->session->set_flashdata('warning', 'Có lỗi rồi');
                 redirect('admin/slide/lienhe');
             }
-        }  
-        $data['article'] = $this->slide->selectImage(null,null,array('begin'=>0,'max' =>1))->result()[0];
+        }
+        $data['article'] = $this->slide->selectImage(null, null, array('begin' => 0, 'max' => 1))->result()[0];
         $this->render($this->load->view('admin/slide/lienhe', $data, TRUE));
     }
 

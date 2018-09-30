@@ -63,7 +63,7 @@ class News extends Admin_controller {
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
 
-        $data['news'] = $this->news->getList(array('title', 'id', 'create_date', 'modify_date', 'image', 'cat_id'), null, array('id' => 'desc'), array('max' => $config['per_page'], 'begin' => $this->uri->segment(4)));
+        $data['news'] = $this->news->getList(null, null, array('id' => 'desc'), array('max' => $config['per_page'], 'begin' => $this->uri->segment(4)));
 
         $data['render_path'] = array('Admin' => $this->index_url . 'admin', 'Danh sách bản tin' => '#');
         $data['heading_title'] = 'Danh sách bản tin';
@@ -82,7 +82,7 @@ class News extends Admin_controller {
         $data['action'] = $this->index_url . 'admin/news/add_edit';
 
         $this->valid->set_rules('title', 'Title', 'trim|required');
-        $this->valid->set_rules('intro', 'Intro', 'required');
+
         $this->valid->set_rules('description', 'Description', 'required');
 
         $data['title'] = $this->input->post('title');

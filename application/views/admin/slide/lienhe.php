@@ -5,10 +5,10 @@
     <div class="box">
         <div class="heading">
             <h1><img src="<?= base_url(); ?>admin_template/image/category.png" />Ảnh liên hệ</h1>
-<div class="buttons">
-                	<a href="javascript:void(0);" onclick="$('#frm_add').submit();" class="button">Save</a>
-                    <a href="javascript:void(0);" onclick="location.href='<?=base_url();?>admin/slide';" class="button">Cancel</a>
-                </div>
+            <div class="buttons">
+                <a href="javascript:void(0);" onclick="$('#frm_add').submit();" class="button">Save</a>
+                <a href="javascript:void(0);" onclick="location.href = '<?= base_url(); ?>admin/slide';" class="button">Cancel</a>
+            </div>
         </div><!--End heading-->
         <div class="content">
             <div id="tabs" class="htabs">
@@ -21,18 +21,18 @@
                 <div id="tab_1" style="display:block;">
                     <table width="100%" class="form">
                         <tbody>
-                            
+
 
                             <tr>
                                 <td width="169" align="left"><label>Hình ảnh:</label></td>
                                 <td width="922">
-                                    <?php    echo form_upload('userfile'); ?> <br>
+                                    <?php echo form_upload('userfile'); ?> <br>
                                     <?php if (@$article->img != '') : ?>
                                         <img src="<?= base_url(); ?><?= @@$article->img; ?>" width="200" height="200">
                                     <?php endif; ?>   
                                 </td>
                             </tr>
-                            
+
                         </tbody>
                     </table>
                 </div>

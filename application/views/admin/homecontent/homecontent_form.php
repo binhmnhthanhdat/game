@@ -1,4 +1,4 @@
- <?php
+<?php
 //tat ca cai nay dung de cau hinh cho ckeditter
 $config_mini = array();
 
@@ -64,7 +64,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                             <tr>
                                 <td width="169" align="left"><label>Nội dung:</label><br><span class="help">Mô tả thông tin chi tiết</span></td>
                                 <td width="922">
-                                     <?php if (@$article->content != '') : ?>
+                                    <?php if (@$article->content != '') : ?>
                                         <?php echo $this->ckeditor->editor("description", @$article->content, $config_mini); ?>
                                     <?php else : ?>
                                         <?php echo $this->ckeditor->editor("description", "", $config_mini); ?>
@@ -72,7 +72,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('content'); ?>
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td width="169" align="left"><label>Hình ảnh:</label></td>
                                 <td width="922">
@@ -138,10 +138,10 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     else
                                         "";
                                     ?>/>
-                                    <?= form_error('active'); ?>
+                                           <?= form_error('active'); ?>
                                 </td>
                             </tr>
-                           
+
 
                         </tbody>
                     </table>

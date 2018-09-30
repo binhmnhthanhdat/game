@@ -1,16 +1,6 @@
-
-<div class="row tMar80 bMar40 clearFix">
-    <div class="col-6 col-sm-12 rPad40">
-        <h2 class="sectionTitle sans">Our work ethic is simple <br />
-            – we work together to make games that are enjoyed together.</h2>
-    </div>
-    <div class="col-6 col-sm-12">
-        <div class="maxWidth480 sans large cmsContent">
-            <p>Our team of creatives, headed up by founders Caspar, Tom and Paul, craft original and innovative games that use new and exciting technology.</p>
-            <p><a href="http://www.wishstudios.co.uk//about/">Click to find out more.</a></p>
-        </div>
-    </div>
-</div>
+<?php if (!empty($cats)) : ?>
+<?php echo $cats[0]->content; ?>
+<?php endif; ?>
 
 <div class="bMar40 clearFix">
     <?php if (!empty($news)) : ?> 

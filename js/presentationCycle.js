@@ -1,20 +1,20 @@
 var presentationCycle = {
-    
+
     /*
      * Presentation Cycle - a jQuery Cycle extension
      * Author:  Gaya Kessler
      * URL:     http://www.gayadesign.com
      * Date:	03-11-09
      */
-    
+
     //slide options
     slideTimeout: 8000,
     containerId: "presentation_container",
-    
+
     //cycle options
     cycleFx: 'scrollHorz',
-    cycleSpeed: 600,  
-    
+    cycleSpeed: 600,
+
     //progressbar options
     barHeight: 14,
     barDisplacement: 20,
@@ -23,7 +23,7 @@ var presentationCycle = {
 //    barImgCenter: "images/bn/pc_item_center.gif",
 //    barImgBarEmpty: "images/bn/pc_bar_empty.gif",
 //    barImgBarFull: "images/bn/pc_bar_full.gif",
-    
+
     //variables this script need
     itemCount: 0,
     currentItem: 0,
@@ -32,19 +32,19 @@ var presentationCycle = {
     barContainerActive: "",
     barContainerOverflow: "",
     disableAnimation: false,
-    
-    init: function() {
-        
+
+    init: function () {
+
         presentationCycle.itemCount = $('#' + presentationCycle.containerId).children().length;
 
         presentationCycle.barContainer = $("<div></div>");
         $(presentationCycle.barContainer).addClass("pc_bar_container");
-        
+
         var subtrackSpace = (presentationCycle.itemCount * presentationCycle.barHeight);
         var totalWidth = $('#' + presentationCycle.containerId).innerWidth() - presentationCycle.barDisplacement;
         var fillWidth = Math.floor((totalWidth - subtrackSpace) / (presentationCycle.itemCount - 1));
         presentationCycle.itemBarWidth = fillWidth;
-        
+
         for (var i = 0; i < presentationCycle.itemCount; i++) {
             var item = $("<div>&nbsp;</div>").appendTo(presentationCycle.barContainer);
             var extra_bar = true;
@@ -73,21 +73,21 @@ var presentationCycle = {
             }
             $(item).attr('itemNr', (i + 1));
             $(item).css('cursor', 'pointer');
-            $(item).click(function() {
-               presentationCycle.gotoSlide($(this).attr('itemNr'));
+            $(item).click(function () {
+                presentationCycle.gotoSlide($(this).attr('itemNr'));
             });
-            
+
             if (extra_bar == true) {
                 var item = $("<div>&nbsp;</div>").appendTo(presentationCycle.barContainer);
                 $(item).addClass("bar");
-                 $(item).css({
+                $(item).css({
                     backgroundImage: "url(" + presentationCycle.barImgBarEmpty + ")",
                     height: presentationCycle.barHeight + "px",
                     width: fillWidth + "px"
                 });
             }
         }
-        
+
         var overflow = $("<div></div>");
         $(overflow).addClass("pc_bar_container_overflow");
         $(overflow).css({
@@ -96,7 +96,7 @@ var presentationCycle = {
         });
         var underflow = $("<div></div>");
         $(underflow).addClass("pc_bar_container_underflow").appendTo(overflow);
-        
+
         presentationCycle.barContainerActive = $(presentationCycle.barContainer).clone().appendTo(underflow);
         $(presentationCycle.barContainerActive).removeClass("pc_bar_container");
         $(presentationCycle.barContainerActive).children().each(function () {
@@ -112,31 +112,33 @@ var presentationCycle = {
             width: presentationCycle.barHeight + "px",
             height: presentationCycle.barHeight + "px"
         });
-        
+
         presentationCycle.barContainerOverflow = overflow;
-        
+
         $('#' + presentationCycle.containerId).cycle({
-    		fx: presentationCycle.cycleFx,
+            fx: presentationCycle.cycleFx,
             speed: presentationCycle.cycleSpeed,
             timeout: presentationCycle.slideTimeout,
-            before: function(currSlideElement, nextSlideElement) { presentationCycle.beforeSlide(currSlideElement, nextSlideElement); }
-    	});
-        
+            before: function (currSlideElement, nextSlideElement) {
+                presentationCycle.beforeSlide(currSlideElement, nextSlideElement);
+            }
+        });
+
         presentationCycle.barContainer.appendTo($('#' + presentationCycle.containerId));
         overflow.appendTo($('#' + presentationCycle.containerId));
-        
+
         var i = 0;
         $(".pc_bar_container_overflow .left, .pc_bar_container_overflow .center, .pc_bar_container_overflow .right").each(function () {
             $(this).attr('itemNr', (i + 1));
             $(this).css('cursor', 'pointer');
-            $(this).click(function() {
+            $(this).click(function () {
                 presentationCycle.gotoSlide($(this).attr('itemNr'));
             });
             i++;
         });
     },
-    
-    beforeSlide: function(currSlideElement, nextSlideElement) {
+
+    beforeSlide: function (currSlideElement, nextSlideElement) {
         if (presentationCycle.currentItem == 0) {
             presentationCycle.currentItem = 1;
         } else {
@@ -144,30 +146,30 @@ var presentationCycle = {
         }
         presentationCycle.animateProcess();
     },
-    
-    animateProcess: function() {
+
+    animateProcess: function () {
         var startWidth = (presentationCycle.itemBarWidth * (presentationCycle.currentItem - 1)) + (presentationCycle.barHeight * presentationCycle.currentItem);
         if (presentationCycle.currentItem != presentationCycle.itemCount) {
-            var newWidth = (presentationCycle.itemBarWidth * (presentationCycle.currentItem)) + (presentationCycle.barHeight * (presentationCycle.currentItem + 1));   
+            var newWidth = (presentationCycle.itemBarWidth * (presentationCycle.currentItem)) + (presentationCycle.barHeight * (presentationCycle.currentItem + 1));
         } else {
             var newWidth = presentationCycle.barHeight;
         }
-        
+
         $(presentationCycle.barContainerOverflow).css({
             width: startWidth + "px"
         });
         if (presentationCycle.disableAnimation == false) {
             $(presentationCycle.barContainerOverflow).stop().animate({
                 width: newWidth + "px"
-            }, (presentationCycle.slideTimeout - 100));   
+            }, (presentationCycle.slideTimeout - 100));
         }
     },
-    
-    gotoSlide: function(itemNr) {
+
+    gotoSlide: function (itemNr) {
         $(presentationCycle.barContainerOverflow).stop();
         presentationCycle.disableAnimation = true;
         $('#' + presentationCycle.containerId).cycle((itemNr - 1));
         $('#' + presentationCycle.containerId).cycle('pause');
     }
-    
+
 }

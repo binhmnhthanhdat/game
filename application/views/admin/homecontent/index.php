@@ -38,8 +38,8 @@
                             <?php foreach ($lists as $user) : ?>
                                 <tr>
                                     <td style="text-align:center"><input type="checkbox" name="selected[]" value="<?= $user['id']; ?>" /></td>
-                                    <td class="left"><?php echo substr($user['title'], 0,150); ?></td>
-                                    <td class="left"><?php echo substr($user['content'], 0,150); ?></td>
+                                    <td class="left"><?php echo substr($user['title'], 0, 150); ?></td>
+                                    <td class="left"><?php echo substr($user['content'], 0, 150); ?></td>
                                     <td class="left"><?php if ($user['image'] != '') { ?><img src="<?php echo base_url() . $user['image']; ?>" alt="<?php echo $user['title']; ?>"  width="100" height="100" /> <?php } ?></td>
                                     <td class="left"><?php echo $user['url']; ?></td>
                                     <td class="right"><?php
@@ -57,12 +57,13 @@
                                         }
                                         ?></td>
                                     <td class="right"><?= $user['ord']; ?></td>
-                                   
+
                                     <td class="right">
-                                        <?php if($user['active']==1)
-                                        echo "<b style='color:blue;'>Active</b>";
+                                        <?php
+                                        if ($user['active'] == 1)
+                                            echo "<b style='color:blue;'>Active</b>";
                                         else
-                                        echo "<b style='color:red;'>None</b>";
+                                            echo "<b style='color:red;'>None</b>";
                                         ?></td>
                                     <td class="right">
                                         <a href="<?= $user['url_edit']; ?>">Edit</a> :: <a href="<?= $user['url_del']; ?>" title="Xóa User này" id="action_del_<?= $user['id']; ?>" onclick="do_del(<?= $user['id']; ?>);

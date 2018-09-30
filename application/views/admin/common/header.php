@@ -23,7 +23,7 @@
             </li>
             <li><a href="#" class="top">Home Content</a>
                 <ul>
-                    <li><a href="<?= $this->index_url; ?>admin/homecontent"> Tiếng Anh</a></li>
+                    <li><a href="<?= $this->index_url; ?>admin/homecontent"> Home Content</a></li>
                 </ul>
             </li>
             <li><a href="#" class="top">Tin tức</a>

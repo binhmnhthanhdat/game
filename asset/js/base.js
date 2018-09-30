@@ -1,22 +1,22 @@
-$(document).ready(function() {
+$(document).ready(function () {
     Base.doReady();
 });
 
-var Base = (function() {
+var Base = (function () {
     // Validator
 
-    $.validator.addMethod("defaultInvalid", function(value, element) {
+    $.validator.addMethod("defaultInvalid", function (value, element) {
         var placeholder = $(element).attr('placeholder');
         return !(element.value == placeholder);
     });
 
-    $.validator.addMethod("quiz", function(value, element) {
+    $.validator.addMethod("quiz", function (value, element) {
         return (value.toLowerCase() == 'xyz');
     });
 
     // Window events
 
-    $(window).resize(function() {
+    $(window).resize(function () {
         clearTimeout(this.id);
         this.id = setTimeout(Base.resizeElements, 250);
     });
@@ -34,7 +34,7 @@ var Base = (function() {
         windowHeight: 0,
         galleryTotal: 0,
 
-        calcPosition: function($image, captionHeight) {
+        calcPosition: function ($image, captionHeight) {
             var size = {};
             var height = $image.attr('height');
             var width = $image.attr('width');
@@ -51,7 +51,7 @@ var Base = (function() {
             return size;
         },
 
-        loadLightboxImage: function($image, captionHTML, newPopup) {
+        loadLightboxImage: function ($image, captionHTML, newPopup) {
             var id = $image.data('id');
             var src = $image.data('full-image');
             if (newPopup) {
@@ -73,13 +73,12 @@ var Base = (function() {
                     'width': $image.attr('width')
                 }).data('id', id);
                 $('#popupGalleryText').show();
-                setTimeout(function() {
+                setTimeout(function () {
                     $('#popupGallery').addClass('animate');
                 }, 1);
-            }
-            else {
+            } else {
                 $('#popupGalleryText').slideUp(300);
-                $('#popupImage img').fadeOut(300, function() {
+                $('#popupImage img').fadeOut(300, function () {
                     $('#popupGalleryText').html(captionHTML).show();
                     var captionHeight = $('#popupGalleryText').outerHeight();
                     $('#popupGalleryText').hide();
@@ -97,25 +96,23 @@ var Base = (function() {
                         'width': $image.attr('width')
                     }).data('id', id);
                     $('#popupGalleryText').slideDown(600);
-                    setTimeout(function() {
+                    setTimeout(function () {
                         $('#popupImage img').fadeIn(600);
                     }, 600);
                 });
             }
         },
 
-        setupArrows: function(i) {
+        setupArrows: function (i) {
             var leftNext = i;
             var rightNext = i;
             if (i == 1) {
                 leftNext = Base.galleryTotal;
                 rightNext++;
-            }
-            else if (i == Base.galleryTotal) {
+            } else if (i == Base.galleryTotal) {
                 leftNext = Base.galleryTotal - 1;
                 rightNext = 1;
-            }
-            else {
+            } else {
                 leftNext--;
                 rightNext++;
             }
@@ -123,7 +120,7 @@ var Base = (function() {
             $('#galleryNext').data('id', rightNext);
         },
 
-        resizeLightboxImage: function() {
+        resizeLightboxImage: function () {
             var $image = $('#popupImage img');
             var captionHeight = $('#popupGalleryText').outerHeight();
             var size = Base.calcPosition($image, captionHeight);
@@ -135,19 +132,19 @@ var Base = (function() {
             });
         },
 
-        resizeIframes: function() {
-            $('.mediaWrapper iframe').each(function() {
+        resizeIframes: function () {
+            $('.mediaWrapper iframe').each(function () {
                 var height = $(this).attr('height');
                 var width = $(this).attr('width');
                 var ratio = height / width;
-                $(this).css('max-width', width+'px');
+                $(this).css('max-width', width + 'px');
                 var displayWidth = $(this).width();
                 $(this).height(displayWidth * ratio);
             });
         },
 
-        centreImageInParent: function() {
-            $('img.bgImage').each(function() {
+        centreImageInParent: function () {
+            $('img.bgImage').each(function () {
                 var parentWidth = $(this).parents('.bgCoverMeasure').outerWidth();
                 var parentHeight = $(this).parents('.bgCoverMeasure').outerHeight();
                 var parentRatio = parentWidth / parentHeight;
@@ -158,23 +155,22 @@ var Base = (function() {
                     $(this).height(parentHeight).width(parentHeight * imageRatio);
                     var newWidth = parentHeight * imageRatio;
                     var leftIndent = (Math.floor(newWidth - parentWidth)) / 2;
-                    $(this).css({ marginTop: 0, marginLeft: '-'+ leftIndent +'px' });
-                }
-                else {
+                    $(this).css({marginTop: 0, marginLeft: '-' + leftIndent + 'px'});
+                } else {
                     $(this).height(parentWidth / imageRatio).width(parentWidth);
                     var newHeight = parentWidth / imageRatio;
                     var topIndent = (Math.floor(newHeight - parentHeight)) / 2;
-                    $(this).css({ marginLeft: 0, marginTop: '-'+ topIndent +'px' });
+                    $(this).css({marginLeft: 0, marginTop: '-' + topIndent + 'px'});
                 }
             });
         },
 
-        loadMap: function() {
+        loadMap: function () {
             var lat = $("#googleMap").data('lat');
             var lng = $("#googleMap").data('lng');
 
             var latLng = new google.maps.LatLng(lat, lng);
-            
+
             var mapOptions = {
                 zoom: 16,
                 center: latLng,
@@ -182,10 +178,11 @@ var Base = (function() {
                 scrollwheel: false
             };
 
-            if (Modernizr.touchevents) mapOptions.draggable = false;
-            
+            if (Modernizr.touchevents)
+                mapOptions.draggable = false;
+
             var map = new google.maps.Map($("#googleMap").get(0), mapOptions);
-            
+
             var marker = new google.maps.Marker({
                 map: map,
                 position: latLng,
@@ -193,7 +190,7 @@ var Base = (function() {
             });
         },
 
-        resizeElements: function() {
+        resizeElements: function () {
             // Setup
             Base.windowWidth = $(window).width();
             Base.windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
@@ -201,25 +198,27 @@ var Base = (function() {
                 $('#navWrapper').show();
                 $('#menuIcon').removeClass('active');
                 $('#logo').removeClass('white');
-            }
-            else if (!$('#menuIcon').hasClass('active')) {
+            } else if (!$('#menuIcon').hasClass('active')) {
                 $('#navWrapper').hide();
                 $('#logo').removeClass('white');
             }
             // Lightbox gallery resize
-            if ($('#popupImage:visible').length) Base.resizeLightboxImage();
+            if ($('#popupImage:visible').length)
+                Base.resizeLightboxImage();
             // Resize iframes
             Base.resizeIframes();
             // Centre images
             Base.centreImageInParent();
             // Map
-            if ($('#googleMap').length) Base.loadMap();
+            if ($('#googleMap').length)
+                Base.loadMap();
         },
 
-        doReady: function() {
+        doReady: function () {
             // Setup
             Base.resizeElements();
-            if ($('#imageGallery').length) Base.galleryTotal = $('#imageGallery .galleryItem').length;
+            if ($('#imageGallery').length)
+                Base.galleryTotal = $('#imageGallery .galleryItem').length;
 
             // Vimeo player
             if ($('#homeVideo').length) {
@@ -229,24 +228,23 @@ var Base = (function() {
                 player.setLoop(true);
                 player.play();
             }
-            
+
             // Mobile menu open
-            $('#menuIcon').on('vclick', function(e) {
+            $('#menuIcon').on('vclick', function (e) {
                 e.preventDefault();
                 if ($(this).hasClass('active')) {
                     $('#navWrapper').fadeOut(600);
                     $(this).removeClass('active');
                     $('#logo').removeClass('white');
-                }
-                else {
+                } else {
                     $('#navWrapper').fadeIn(600);
                     $(this).addClass('active');
                     $('#logo').addClass('white');
                 }
             });
-            
+
             // Mobile menu close
-            $('#menuClose').on('vclick', function(e) {
+            $('#menuClose').on('vclick', function (e) {
                 e.preventDefault();
                 $('#navWrapper').fadeOut(600);
                 $('#menuIcon').removeClass('active');
@@ -284,107 +282,110 @@ var Base = (function() {
             });
 
             // Lightbox gallery open
-            $('.galleryItem').on('vclick', function(e) {
+            $('.galleryItem').on('vclick', function (e) {
                 e.preventDefault();
                 var $this = $(this);
                 var id = $this.data('id');
                 Base.setupArrows(id);
-                var captionHTML = '<h4 class="smallTitle uppercase bold">'+ $this.data('title') +'</h4>';
-                captionHTML += '<p class="bMar0">'+$this.data('caption')+'</p>';
+                var captionHTML = '<h4 class="smallTitle uppercase bold">' + $this.data('title') + '</h4>';
+                captionHTML += '<p class="bMar0">' + $this.data('caption') + '</p>';
                 var $image = $this.children('img');
                 Base.loadLightboxImage($image, captionHTML, true);
             });
 
             // Lightbox gallery nav
-            $('.galleryArrow').on('vclick', function(e) {
+            $('.galleryArrow').on('vclick', function (e) {
                 e.preventDefault();
                 var id = $(this).data('id');
                 Base.setupArrows(id);
-                var $item = $('#imageGallery .galleryItem[data-id="'+id+'"]');
-                var captionHTML = '<h4 class="smallTitle uppercase bold">'+ $item.data('title') +'</h4>';
-                captionHTML += '<p class="bMar0">'+$item.data('caption')+'</p>';
+                var $item = $('#imageGallery .galleryItem[data-id="' + id + '"]');
+                var captionHTML = '<h4 class="smallTitle uppercase bold">' + $item.data('title') + '</h4>';
+                captionHTML += '<p class="bMar0">' + $item.data('caption') + '</p>';
                 var $image = $item.children('img');
                 Base.loadLightboxImage($image, captionHTML, false);
             });
-            
+
             // Lightbox gallery swipe
-            $('#popupImage').on('swiperight', function() {
+            $('#popupImage').on('swiperight', function () {
                 $('#galleryPrev').trigger('vclick');
-            }).on('swipeleft', function() {
+            }).on('swipeleft', function () {
                 $('#galleryNext').trigger('vclick');
             });
 
             // Lightbox gallery close
-            $('#galleryClose').on('vclick', function(e) {
+            $('#galleryClose').on('vclick', function (e) {
                 e.preventDefault();
-                $('#popupGalleryWrapper').fadeOut(600, function() {
+                $('#popupGalleryWrapper').fadeOut(600, function () {
                     $('#popupGallery').removeClass('animate');
                     $('#popupImage').empty();
                 });
             });
-            $(document).on('vclick', function(e) {
+            $(document).on('vclick', function (e) {
                 if ($('#popupGalleryWrapper:visible').length && $(e.target).is('#popupGalleryWrapper')) {
                     $('#galleryClose').trigger('vclick');
                 }
             });
 
             // Tweets
-            $('.tweetWrapper').on('vclick', function(e) {
+            $('.tweetWrapper').on('vclick', function (e) {
                 if (!$(e.target).is('a')) {
                     e.preventDefault();
                     var id = $(this).data('id');
-                    window.open('https://twitter.com/wishstudios/status/'+id);
+                    window.open('https://twitter.com/wishstudios/status/' + id);
                 }
             });
 
             // Form submit
-            $('a.submit').on('vclick', function(e) {
+            $('a.submit').on('vclick', function (e) {
                 e.preventDefault();
                 $(this).parents('form').submit();
             });
 
             // Form placeholder fallback
             if (!Modernizr.input.placeholder) {
-                $('input.placeholder, textarea.placeholder').each(function() {
+                $('input.placeholder, textarea.placeholder').each(function () {
                     var placeholder = $(this).attr('placeholder');
-                    if ($(this).val() == '') $(this).val(placeholder);
-                    $(this).focus(function() {
-                        if ($(this).val() == placeholder) $(this).val('');
-                    }).blur(function() {
-                        if ($(this).val() == '') $(this).val(placeholder);
+                    if ($(this).val() == '')
+                        $(this).val(placeholder);
+                    $(this).focus(function () {
+                        if ($(this).val() == placeholder)
+                            $(this).val('');
+                    }).blur(function () {
+                        if ($(this).val() == '')
+                            $(this).val(placeholder);
                     });
                 });
             }
-            
+
             // Enquiry form validate
             $('#enquiryForm').validate({
-                highlight: function(element,errorClass) {
+                highlight: function (element, errorClass) {
                     $(element).addClass('redBorder');
                 },
-                unhighlight: function(element,errorClass) {
+                unhighlight: function (element, errorClass) {
                     $(element).removeClass('redBorder');
                 },
-                submitHandler: function(form) {
+                submitHandler: function (form) {
                     $(form).find('.submit').hide();
                     $(form).find('.sending').show();
                     $(form).ajaxSubmit({
                         resetForm: true,
-                        success: function(data) {
-                            $(form).find('.sending').fadeOut(300, function() {
+                        success: function (data) {
+                            $(form).find('.sending').fadeOut(300, function () {
                                 $(form).find('.success').fadeIn(300);
                             });
-                            setTimeout(function() {
-                                $(form).find('.success').fadeOut(300, function() {
+                            setTimeout(function () {
+                                $(form).find('.success').fadeOut(300, function () {
                                     $(form).find('.submit').fadeIn(300);
                                 });
                             }, 5000);
                         },
-                        error: function() {
-                            $(form).find('.sending').fadeOut(300, function() {
+                        error: function () {
+                            $(form).find('.sending').fadeOut(300, function () {
                                 $(form).find('.enquiryError').fadeIn(300);
                             });
-                            setTimeout(function() {
-                                $(form).find('.enquiryError').fadeOut(300, function() {
+                            setTimeout(function () {
+                                $(form).find('.enquiryError').fadeOut(300, function () {
                                     $(form).find('.submit').fadeIn(300);
                                 });
                             }, 5000);

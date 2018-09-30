@@ -21,17 +21,13 @@ class Public_controller extends CI_Controller {
 
         $this->load->library('util');
         $this->load->helper('date');
-        //$this->load->helper('counter');
-        // Lun lun chay ham counter
-        //counter();
+ 
         $this->load->model('cat_news/cat_news_model', 'cat_news');
         $this->load->model('banner/banner_model', 'banner');
         $this->load->model('other/setting_model', 'setting');
         $this->load->model('homecontent/homecontent_model', 'homecontent');
         $this->load->model('parttent/parttent_model', 'parttent');
         $this->load->model('team/team_model', 'team');
-
-
         $this->load->model('tin_tuc/tintuc_model', 'tin');
 
         // config form_val
@@ -73,7 +69,7 @@ class Public_controller extends CI_Controller {
       ================================================== */
 
     function render($content, $layout) {
-
+        
         $data['header'] = $this->headers();
         $data['menu'] = $this->menu();
         $data['footer'] = $this->footer();
@@ -84,6 +80,8 @@ class Public_controller extends CI_Controller {
 
     public function headers() {
         $data = array();
+        $cats = $this->cat_news->get_cat_news_where(array('active' => 1), array('ord' => 'asc'), null)->result();
+        $data['cats'] = $cats;
         return $this->load->view('common/headers', $data, TRUE);
     }
 

@@ -1,7 +1,7 @@
 <?php /*
 
 
--------------------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------
   CKEditor - Posted Data
 
   We are sorry, but your Web server does not support the PHP language used in this script.
@@ -13,9 +13,9 @@
 
   Copyright 2003-2012, CKSource - Frederico Knabben.
   All rights reserved.
--------------------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------------------
 
 
 
 
-*/ include "assets/_posteddata.php"; ?>
+ */ include "assets/_posteddata.php"; ?>

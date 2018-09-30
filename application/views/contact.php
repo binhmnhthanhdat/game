@@ -1,26 +1,6 @@
- 
-<div class="row tMar80 bMar80 clearFix">
-    <div class="col-6 col-sm-12 rPad40">
-        <h2 class="sectionTitle sans bMar0">Tower Point<br />
-            44 North Road<br />
-            Brighton, BN1 1YR</h2>
-        <div class="tMar10 bMar30">
-            <a class="bigIcon twitter" href="http://www.twitter.com/wishstudios" target="_blank">@wishstudios</a>
-        </div>
-    </div>
-    <div class="col-6 col-sm-12">
-        <div class="maxWidth480 sans large cmsContent">
-            <p>If you’d like to get in touch, please email us via <a href="http://www.wishstudios.co.uk/mailto:info@wishstudios.co.uk">info@wishstudios.co.uk</a></p>
-            <p>We’re always interested in hearing from talented, game industry-experienced professionals, whether full-time or freelance. Please email <a href="http://www.wishstudios.co.uk/mailto:jobs@wishstudios.co.uk">jobs@wishstudios.co.uk</a></p>
-            <p>For <em>That&#8217;s You!</em> customer support, please see <a href="https://www.playstation.com/en-gb/get-help/help-library/games/game-information/ps4-thats-you-help/" target="_blank" rel="noopener noreferrer">these dedicated help pages</a>.</p>
-            <p>If your issue is not covered there, please contact the Sony PlayStation teams on Twitter:</p>
-            <ul>
-                <li>For US support, please visit <a href="https://twitter.com/AskPlayStation" target="_blank" rel="noopener noreferrer">@AskPlayStation</a></li>
-                <li>For UK support use <a href="https://twitter.com/AskPS_UK" target="_blank" rel="noopener noreferrer">@AskPS_UK</a></li>
-            </ul>
-        </div>
-    </div>
-</div>
+<?php if (!empty($cats)) : ?>
+<?php echo $cats[0]->content; ?>
+<?php endif; ?>
 
 <!--<div id="googleMap" data-lat="50.8260128" data-lng="-0.14139899999997851"></div>-->
 

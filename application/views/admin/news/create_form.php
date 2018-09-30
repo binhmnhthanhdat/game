@@ -82,40 +82,19 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('metakey'); ?>
                                 </td>
                             </tr>
-                            <tr>
-                                <td width="169" align="left"><label>Nhóm tin:</label></td>
-                                <td width="922">
-                                    <select name="cat_id">
-                                        <option value="0" selected >Chọn</option>
-                                        <?php if (!empty($cat)) : ?>
-                                            <?php foreach ($cat as $c) : ?>
-                                                <?php if (@$q->cat_id != '') : ?>
-
-                                                    <option value="<?= $c->id; ?>" <?php if (@$q->cat_id == $c->id) echo "selected"; ?>><? if($c->parent==0) { echo $c->name; }else { echo "---".$c->name; }?></option>
-
-                                                <?php else : ?>
-                                                    <option value="<?= $c->id; ?>" <?php echo set_select('cat_id', $c->id); ?>><? if($c->parent==0) { echo $c->name; }else { echo "---".$c->name; }?></option>
-                                                <?php endif; ?>
-
-                                            <?php endforeach; ?>
-                                        <?php endif; ?>
-                                    </select>
-                                    <?= form_error('cat_id'); ?>
-                                </td>
-                            </tr>
-                            
+ 
                             <tr>
                                 <td width="169" align="left"><label>Loại tin:</label></td>
                                 <td width="922">
                                     <select name="type">
-                                            <option value="0" selected >Chọn</option>
-                                            <option value="1" <?php if (@$q->type == 1) echo "selected"; ?>>Tin Work</option>
-                                            <option value="2" <?php if (@$q->type == 2) echo "selected"; ?>>Tin Tuyển dụng</option>
+                                        <option value="0" selected >Chọn</option>
+                                        <option value="1" <?php if (@$q->type == 1) echo "selected"; ?>>Tin Work</option>
+                                        <option value="2" <?php if (@$q->type == 2) echo "selected"; ?>>Tin Tuyển dụng</option>
                                     </select>
                                     <?= form_error('type'); ?>
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td width="169" align="left"><label>Mô tả ngắn:</label></td>
                                 <td width="922">
@@ -138,8 +117,8 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('description'); ?>
                                 </td>
                             </tr>
-                            
-                            
+
+
 
                             <tr>
                                 <td width="169" align="left"><label>Hình ảnh:</label></td>

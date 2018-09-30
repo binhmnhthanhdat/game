@@ -25,7 +25,7 @@
                 }
                 ?>   
             </li>
-            <?php endforeach ; ?>
+            <?php endforeach; ?>
         </ul>
         <?php endif; ?>
     </div>
@@ -69,7 +69,7 @@
                 <a href="<? echo  site_url('xem-san-pham/' . $kqproduct_khuyenmai->id. '-' . $kqproduct_khuyenmai->catid. '-'. $kqproduct_khuyenmai->p_name_alias);?>"><img  width="60" height="60" src="<? echo base_url();?><? echo  $kqproduct_khuyenmai->p_image_thumb;?>" alt="<? echo  $kqproduct_khuyenmai->p_name;?>"></a>
             </dt>
             <dd>
-                <a href="<? echo  site_url('xem-san-pham/' . $kqproduct_khuyenmai->id. '-'. $kqproduct_khuyenmai->catid. '-' . $kqproduct_khuyenmai->p_name_alias);?>"><?php echo  $kqproduct_khuyenmai->p_name;?> </a>
+                <a href="<? echo  site_url('xem-san-pham/' . $kqproduct_khuyenmai->id. '-'. $kqproduct_khuyenmai->catid. '-' . $kqproduct_khuyenmai->p_name_alias);?>"><?php echo $kqproduct_khuyenmai->p_name; ?> </a>
                 <span>Giá: <strong>:<? echo number_format($kqproduct_noibat->gia);?> </strong></span>
                 <span><strong><a href="<? echo  site_url('xem-san-pham/' . $kqproduct_khuyenmai->id. '-'. $kqproduct_khuyenmai->catid. '-' . $kqproduct_khuyenmai->p_name_alias);?>">Chi tiết</a></strong></span>
             </dd>

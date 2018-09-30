@@ -44,6 +44,7 @@ class Team_model extends CI_Model {
             return FALSE;
         }
     }
+
     public function read($id) {
         $this->db->where('id', $id);
         $q = $this->db->get($this->table);
@@ -54,6 +55,7 @@ class Team_model extends CI_Model {
             return FALSE;
         }
     }
+
     public function get_image($id) {
         $this->db->where('id', $id);
         $this->db->select('image');
@@ -74,6 +76,7 @@ class Team_model extends CI_Model {
             return FALSE;
         }
     }
+
     function get_team_where($where = null, $order = null, $limit = null) {
 
         if ($where != null) {
@@ -104,6 +107,7 @@ class Team_model extends CI_Model {
 
         $q->free_result();
     }
+
     public function getList($select = null, $where = null, $order = null, $limit = null) {
 
         if ($select != null) {
@@ -143,4 +147,5 @@ class Team_model extends CI_Model {
     public function total() {
         return $this->db->count_all_results($this->table);
     }
+
 }

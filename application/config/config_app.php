@@ -1,14 +1,17 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
-|--------------------------------------------------------------------------
-| Your configure.
-|--------------------------------------------------------------------------
-|
-| Some config for change later.
-| Control and view can be change when ...
-*/
+<?php
 
-/*********** Mail config ***********/
+if (!defined('BASEPATH'))
+    exit('No direct script access allowed');
+/*
+  |--------------------------------------------------------------------------
+  | Your configure.
+  |--------------------------------------------------------------------------
+  |
+  | Some config for change later.
+  | Control and view can be change when ...
+ */
+
+/* * ********* Mail config ********** */
 $config['send_mail'] = TRUE;
 $config['mail_protocol'] = 'smtp';
 $config['smtp_host'] = 'mail.thuanvietland.com.vn';
@@ -31,7 +34,7 @@ $config['mail_advisory_text'] = 'Góp ý - www.choqng.com';
 $config['mail_webmaster'] = 'choqng@gmail.com';
 $config['mail_webmaster_text'] = 'Ban quản trị - www.choqng.com';
 
-/*********** File configs ***********/
+/* * ********* File configs ********** */
 $config['upload_team_dir'] = 'data_uploads/team/';
 $config['upload_news_dir'] = 'data_uploads/tin_tuc/';
 $config['upload_product_dir'] = 'data_uploads/product/';
@@ -47,10 +50,10 @@ $config['image_height'] = 1024;
 $config['image_thumb_width'] = 120;
 $config['image_thumb_height'] = 100;
 
-/*********** Pagination configs ***********/
+/* * ********* Pagination configs ********** */
 $config['paginator_size'] = 20;
 
-/*********** Date configs ***********/
+/* * ********* Date configs ********** */
 $config['datetime_vi'] = 'd/m/Y h:i:s';
 
 /* End of file config.php */

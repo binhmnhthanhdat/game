@@ -14,315 +14,315 @@
 /*jslint browser: true, forin: true */
 
 (function ($) {
-	"use strict";
+    "use strict";
 
-	var console = window.console ? window.console : {
-		log: $.noop,
-		error: function (msg) {
-			$.error(msg);
-		}
-	};
+    var console = window.console ? window.console : {
+        log: $.noop,
+        error: function (msg) {
+            $.error(msg);
+        }
+    };
 
-	var supportsProp = (('prop' in $.fn) && ('removeProp' in $.fn));  // !(/^[01]\.[0-5](?:\.|$)/.test($.fn.jquery));
+    var supportsProp = (('prop' in $.fn) && ('removeProp' in $.fn));  // !(/^[01]\.[0-5](?:\.|$)/.test($.fn.jquery));
 
-	// Big picture
-	var Wysiwyg = {
-		controls : {},             // shared controls
-		defaults : {},
-		dialogs  : {},
-		dom      : {},
-		editor   : {},
-		plugins  : {},
-		ui       : {},
-		utils    : {},
+    // Big picture
+    var Wysiwyg = {
+        controls: {}, // shared controls
+        defaults: {},
+        dialogs: {},
+        dom: {},
+        editor: {},
+        plugins: {},
+        ui: {},
+        utils: {},
 
-		init     : function (object, options) {}, // call instance
-		instance : function (options) {}, // create new object
+        init: function (object, options) {}, // call instance
+        instance: function (options) {}, // create new object
 
-		activeEditor: null,        // References the active editor instance, useful for having a global toolbar.
-		console: console,          // Let our console be available for extensions
-		instances: []              // Collection
-	};
+        activeEditor: null, // References the active editor instance, useful for having a global toolbar.
+        console: console, // Let our console be available for extensions
+        instances: []              // Collection
+    };
 
-	// Detailed overview
-	Wysiwyg.init = function (object, options) {
-		var instance = new this.instance(options);
+    // Detailed overview
+    Wysiwyg.init = function (object, options) {
+        var instance = new this.instance(options);
 
-		object.data("wysiwyg", instance);
-		this.instances.push(instance);
-		
-		return instance;
-	};
+        object.data("wysiwyg", instance);
+        this.instances.push(instance);
 
-	Wysiwyg.instance = function (options) {
-		console.log(options);
-	};
+        return instance;
+    };
 
-	Wysiwyg.controls = {
-		
-	};
+    Wysiwyg.instance = function (options) {
+        console.log(options);
+    };
 
-	Wysiwyg.defaults = {
-			
-	};
+    Wysiwyg.controls = {
 
-	Wysiwyg.dialogs = {
-			
-	};
+    };
 
-	Wysiwyg.dom = {
-			
-	};
+    Wysiwyg.defaults = {
 
-	Wysiwyg.editor = {
-			
-	};
+    };
 
-	Wysiwyg.plugins = {
-			
-	};
+    Wysiwyg.dialogs = {
 
-	Wysiwyg.ui = {
-			
-	};
+    };
 
-	Wysiwyg.utils = {
-			
-	};
+    Wysiwyg.dom = {
 
-	var WysiwygOld = function () {
-		this.editor			= null;
-		this.editorDoc		= null;
-		this.element		= null;
-		this.options		= {};
-		this.original		= null;
-		this.savedRange		= null;
-		this.timers			= [];
-		this.validKeyCodes	= [8, 9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46];
+    };
 
-		this.isDestroyed	= false;
+    Wysiwyg.editor = {
 
-		this.dom = { // DOM related properties and methods
-			ie:		{
-			},
-			w3c:	{
-			}
-		};
-		this.dom.parent		= this;
-		this.dom.ie.parent	= this.dom;
-		this.dom.w3c.parent	= this.dom;
+    };
 
-		this.ui			= {};	// UI related properties and methods
-		this.ui.self	= this;
-		this.ui.toolbar	= null;
-		this.ui.initialHeight = null; // ui.grow
+    Wysiwyg.plugins = {
 
-		this.dom.getAncestor = function (element, filterTagName) {};
-		this.dom.getElement = function (filterTagName) {};
-		this.dom.ie.getElement = function (filterTagName) {};
-		this.dom.w3c.getElement = function (filterTagName) {};
+    };
 
-		this.ui.addHoverClass = function () {};
-		this.ui.appendControls = function () {};
-		this.ui.appendItem = function (name, control) {};
-		this.ui.appendItemCustom = function (name, control) {};
-		this.ui.appendItemSeparator = function () {};
-		this.autoSaveFunction = function () {};
-		this.ui.checkTargets = function (element) {};
-		this.ui.designMode = function () {};
-		this.destroy = function () {};
-		this.getRangeText = function () {};
-		this.extendOptions = function (options) {};
-		this.ui.focus = function () {};
-		this.ui.returnRange = function () {};
-		this.increaseFontSize = function () {};
-		this.decreaseFontSize = function () {};
-		this.getContent = function () {};
+    Wysiwyg.ui = {
 
-		this.events = {
-			_events : {},
-			bind : function (eventName, callback) {},
-			trigger : function (eventName, args) {},
-			filter : function (eventName, originalText) {}
-		};
+    };
 
-		this.getElementByAttributeValue = function (tagName, attributeName, attributeValue) {};
-		this.getInternalRange = function () {};
-		this.getInternalSelection = function () {};
-		this.getRange = function () {};
-		this.getSelection = function () {};
-		this.ui.grow = function () {};
-		this.init = function (element, options) {};
-		this.ui.initFrame = function () {};
-		this.innerDocument = function () {};
-		this.insertHtml = function (szHTML) {};
-		this.parseControls = function () {};
-		this.removeFormat = function () {};
-		this.ui.removeHoverClass = function () {};
-		this.resetFunction = function () {};
-		this.saveContent = function () {};
-		this.setContent = function (newContent) {};
-		this.triggerControl = function (name, control) {};
-		this.triggerControlCallback = function (name) {};
-		this.ui.withoutCss = function () {};
-		this.wrapInitialContent = function () {};
-	};
+    Wysiwyg.utils = {
 
-	/*
-	 * jQuery layer
-	 */
-	$.wysiwyg = Wysiwyg;
+    };
 
-	$.wysiwygOld = {
-		messages: {},
+    var WysiwygOld = function () {
+        this.editor = null;
+        this.editorDoc = null;
+        this.element = null;
+        this.options = {};
+        this.original = null;
+        this.savedRange = null;
+        this.timers = [];
+        this.validKeyCodes = [8, 9, 13, 16, 17, 18, 19, 20, 27, 33, 34, 35, 36, 37, 38, 39, 40, 45, 46];
 
-		addControl: function (object, name, settings) {
-			return object.each(function () {
-				var oWysiwyg = $(this).data("wysiwyg"),
-					customControl = {},
-					toolbar;
+        this.isDestroyed = false;
 
-				if (!oWysiwyg) {
-					return this;
-				}
+        this.dom = {// DOM related properties and methods
+            ie: {
+            },
+            w3c: {
+            }
+        };
+        this.dom.parent = this;
+        this.dom.ie.parent = this.dom;
+        this.dom.w3c.parent = this.dom;
 
-				customControl[name] = $.extend(true, {visible: true, custom: true}, settings);
-				$.extend(true, oWysiwyg.options.controls, customControl);
+        this.ui = {};	// UI related properties and methods
+        this.ui.self = this;
+        this.ui.toolbar = null;
+        this.ui.initialHeight = null; // ui.grow
 
-				// render new toolbar
-				toolbar = $(oWysiwyg.options.toolbarHtml);
-				oWysiwyg.ui.toolbar.replaceWith(toolbar);
-				oWysiwyg.ui.toolbar = toolbar;
-				oWysiwyg.ui.appendControls();
-			});
-		},
+        this.dom.getAncestor = function (element, filterTagName) {};
+        this.dom.getElement = function (filterTagName) {};
+        this.dom.ie.getElement = function (filterTagName) {};
+        this.dom.w3c.getElement = function (filterTagName) {};
 
-		clear: function (object) {
-			return object.each(function () {
-				oWysiwyg.setContent("");
-			});
-		},
+        this.ui.addHoverClass = function () {};
+        this.ui.appendControls = function () {};
+        this.ui.appendItem = function (name, control) {};
+        this.ui.appendItemCustom = function (name, control) {};
+        this.ui.appendItemSeparator = function () {};
+        this.autoSaveFunction = function () {};
+        this.ui.checkTargets = function (element) {};
+        this.ui.designMode = function () {};
+        this.destroy = function () {};
+        this.getRangeText = function () {};
+        this.extendOptions = function (options) {};
+        this.ui.focus = function () {};
+        this.ui.returnRange = function () {};
+        this.increaseFontSize = function () {};
+        this.decreaseFontSize = function () {};
+        this.getContent = function () {};
 
-		destroy: function (object) {
-			return object.each(function () {
-				oWysiwyg.destroy();
-			});
-		},
+        this.events = {
+            _events: {},
+            bind: function (eventName, callback) {},
+            trigger: function (eventName, args) {},
+            filter: function (eventName, originalText) {}
+        };
 
-		"document": function (object) {
-			return $(oWysiwyg.editorDoc);
-		},
+        this.getElementByAttributeValue = function (tagName, attributeName, attributeValue) {};
+        this.getInternalRange = function () {};
+        this.getInternalSelection = function () {};
+        this.getRange = function () {};
+        this.getSelection = function () {};
+        this.ui.grow = function () {};
+        this.init = function (element, options) {};
+        this.ui.initFrame = function () {};
+        this.innerDocument = function () {};
+        this.insertHtml = function (szHTML) {};
+        this.parseControls = function () {};
+        this.removeFormat = function () {};
+        this.ui.removeHoverClass = function () {};
+        this.resetFunction = function () {};
+        this.saveContent = function () {};
+        this.setContent = function (newContent) {};
+        this.triggerControl = function (name, control) {};
+        this.triggerControlCallback = function (name) {};
+        this.ui.withoutCss = function () {};
+        this.wrapInitialContent = function () {};
+    };
 
-		getContent: function (object) {
-			return oWysiwyg.getContent();
-		},
+    /*
+     * jQuery layer
+     */
+    $.wysiwyg = Wysiwyg;
 
-		init: function (object, options) {
-			return object.each(function () {
-				var opts = $.extend(true, {}, options),
-					obj;
+    $.wysiwygOld = {
+        messages: {},
 
-				// :4fun:
-				// remove this textarea validation and change line in this.saveContent function
-				// $(this.original).val(content); to $(this.original).html(content);
-				// now you can make WYSIWYG editor on h1, p, and many more tags
-				if (("textarea" !== this.nodeName.toLowerCase()) || $(this).data("wysiwyg")) {
-					return;
-				}
+        addControl: function (object, name, settings) {
+            return object.each(function () {
+                var oWysiwyg = $(this).data("wysiwyg"),
+                        customControl = {},
+                        toolbar;
 
-				obj = new Wysiwyg();
-				obj.init(this, opts);
-				$.data(this, "wysiwyg", obj);
+                if (!oWysiwyg) {
+                    return this;
+                }
 
-				$(obj.editorDoc).trigger("afterInit.wysiwyg");
-			});
-		},
+                customControl[name] = $.extend(true, {visible: true, custom: true}, settings);
+                $.extend(true, oWysiwyg.options.controls, customControl);
 
-		insertHtml: function (object, szHTML) {
-			return object.each(function () {
-				oWysiwyg.insertHtml(szHTML);
-			});
-		},
+                // render new toolbar
+                toolbar = $(oWysiwyg.options.toolbarHtml);
+                oWysiwyg.ui.toolbar.replaceWith(toolbar);
+                oWysiwyg.ui.toolbar = toolbar;
+                oWysiwyg.ui.appendControls();
+            });
+        },
 
-		plugin: {
-			listeners: {},
-			bind: function (Wysiwyg) {},
-			exists: function (name) {},
-			listen: function (action, handler) {},
-			parseName: function (name) {},
-			register: function (data) {}
-		},
+        clear: function (object) {
+            return object.each(function () {
+                oWysiwyg.setContent("");
+            });
+        },
 
-		removeFormat: function (object) {
-			return object.each(function () {
-				oWysiwyg.removeFormat();
-			});
-		},
+        destroy: function (object) {
+            return object.each(function () {
+                oWysiwyg.destroy();
+            });
+        },
 
-		save: function (object) {
-			return object.each(function () {
-				oWysiwyg.saveContent();
-			});
-		},
+        "document": function (object) {
+            return $(oWysiwyg.editorDoc);
+        },
 
-		selectAll: function (object) {
-			oBody = oWysiwyg.editorDoc.body;
-			if (window.getSelection) {
-				selection = oWysiwyg.getInternalSelection();
-				selection.selectAllChildren(oBody);
-			} else {
-				oRange = oBody.createTextRange();
-				oRange.moveToElementText(oBody);
-				oRange.select();
-			}
-		},
+        getContent: function (object) {
+            return oWysiwyg.getContent();
+        },
 
-		setContent: function (object, newContent) {
-			return object.each(function () {
-				oWysiwyg.setContent(newContent);
-			});
-		},
+        init: function (object, options) {
+            return object.each(function () {
+                var opts = $.extend(true, {}, options),
+                        obj;
 
-		triggerControl: function (object, controlName) {
-			return object.each(function () {
-				if (!oWysiwyg.controls[controlName]) {
-					console.error("Control '" + controlName + "' not exists");
-				}
+                // :4fun:
+                // remove this textarea validation and change line in this.saveContent function
+                // $(this.original).val(content); to $(this.original).html(content);
+                // now you can make WYSIWYG editor on h1, p, and many more tags
+                if (("textarea" !== this.nodeName.toLowerCase()) || $(this).data("wysiwyg")) {
+                    return;
+                }
 
-				oWysiwyg.triggerControl.apply(oWysiwyg, [controlName, oWysiwyg.controls[controlName]]);
-			});
-		},
+                obj = new Wysiwyg();
+                obj.init(this, opts);
+                $.data(this, "wysiwyg", obj);
 
-		support: {
-			prop: supportsProp
-		},
+                $(obj.editorDoc).trigger("afterInit.wysiwyg");
+            });
+        },
 
-		utils: {
-			extraSafeEntities: [["<", ">", "'", '"', " "], [32]],
-			encodeEntities: function (str) {}
-		}
-	};
+        insertHtml: function (object, szHTML) {
+            return object.each(function () {
+                oWysiwyg.insertHtml(szHTML);
+            });
+        },
 
-	$.fn.wysiwyg = function (method) {
-		var args = arguments, plugin;
+        plugin: {
+            listeners: {},
+            bind: function (Wysiwyg) {},
+            exists: function (name) {},
+            listen: function (action, handler) {},
+            parseName: function (name) {},
+            register: function (data) {}
+        },
 
-		if ("undefined" !== typeof $.wysiwyg[method]) {
-			// set argument object to undefined
-			args = Array.prototype.concat.call([args[0]], [this], Array.prototype.slice.call(args, 1));
-			return $.wysiwyg[method].apply($.wysiwyg, Array.prototype.slice.call(args, 1));
-		} else if ("object" === typeof method || !method) {
-			Array.prototype.unshift.call(args, this);
-			return $.wysiwyg.init.apply($.wysiwyg, args);
-		} else if ($.wysiwyg.plugin.exists(method)) {
-			plugin = $.wysiwyg.plugin.parseName(method);
-			args = Array.prototype.concat.call([args[0]], [this], Array.prototype.slice.call(args, 1));
-			return $.wysiwyg[plugin.name][plugin.method].apply($.wysiwyg[plugin.name], Array.prototype.slice.call(args, 1));
-		} else {
-			console.error("Method '" +  method + "' does not exist on jQuery.wysiwyg.\nTry to include some extra controls or plugins");
-		}
-	};
+        removeFormat: function (object) {
+            return object.each(function () {
+                oWysiwyg.removeFormat();
+            });
+        },
 
-	$.fn.getWysiwyg = function () {
-		return $.data(this, "wysiwyg");
-	};
+        save: function (object) {
+            return object.each(function () {
+                oWysiwyg.saveContent();
+            });
+        },
+
+        selectAll: function (object) {
+            oBody = oWysiwyg.editorDoc.body;
+            if (window.getSelection) {
+                selection = oWysiwyg.getInternalSelection();
+                selection.selectAllChildren(oBody);
+            } else {
+                oRange = oBody.createTextRange();
+                oRange.moveToElementText(oBody);
+                oRange.select();
+            }
+        },
+
+        setContent: function (object, newContent) {
+            return object.each(function () {
+                oWysiwyg.setContent(newContent);
+            });
+        },
+
+        triggerControl: function (object, controlName) {
+            return object.each(function () {
+                if (!oWysiwyg.controls[controlName]) {
+                    console.error("Control '" + controlName + "' not exists");
+                }
+
+                oWysiwyg.triggerControl.apply(oWysiwyg, [controlName, oWysiwyg.controls[controlName]]);
+            });
+        },
+
+        support: {
+            prop: supportsProp
+        },
+
+        utils: {
+            extraSafeEntities: [["<", ">", "'", '"', " "], [32]],
+            encodeEntities: function (str) {}
+        }
+    };
+
+    $.fn.wysiwyg = function (method) {
+        var args = arguments, plugin;
+
+        if ("undefined" !== typeof $.wysiwyg[method]) {
+            // set argument object to undefined
+            args = Array.prototype.concat.call([args[0]], [this], Array.prototype.slice.call(args, 1));
+            return $.wysiwyg[method].apply($.wysiwyg, Array.prototype.slice.call(args, 1));
+        } else if ("object" === typeof method || !method) {
+            Array.prototype.unshift.call(args, this);
+            return $.wysiwyg.init.apply($.wysiwyg, args);
+        } else if ($.wysiwyg.plugin.exists(method)) {
+            plugin = $.wysiwyg.plugin.parseName(method);
+            args = Array.prototype.concat.call([args[0]], [this], Array.prototype.slice.call(args, 1));
+            return $.wysiwyg[plugin.name][plugin.method].apply($.wysiwyg[plugin.name], Array.prototype.slice.call(args, 1));
+        } else {
+            console.error("Method '" + method + "' does not exist on jQuery.wysiwyg.\nTry to include some extra controls or plugins");
+        }
+    };
+
+    $.fn.getWysiwyg = function () {
+        return $.data(this, "wysiwyg");
+    };
 })(jQuery);

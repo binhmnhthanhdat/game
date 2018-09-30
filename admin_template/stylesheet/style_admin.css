@@ -68,90 +68,90 @@ table.form{border-collapse:collapse; margin-bottom:20px; width:100%;}
 table.form > tbody > tr > td:first-chirld{width:200px;}
 table.form > tbody > tr > td{border-bottom:1px solid #cccccc; color:#000000; padding:10px;}
 table .filter {
-	width: 100%;
-	background: #E7EFEF; 
-	border: 1px solid #C6D7D7; 
-	margin-bottom: 15px;	
+    width: 100%;
+    background: #E7EFEF; 
+    border: 1px solid #C6D7D7; 
+    margin-bottom: 15px;	
 }
 table .filter td {
-	padding: 5px;
+    padding: 5px;
 }
 
 /*Menu top*/
 #menu {
-	background: url('../image/menu.png') repeat-x;
-	position: relative;
-	z-index: 1;
-	height: 34px;
-	clear: both;
-	padding: 0px 30px;
-	min-width: 900px;
+    background: url('../image/menu.png') repeat-x;
+    position: relative;
+    z-index: 1;
+    height: 34px;
+    clear: both;
+    padding: 0px 30px;
+    min-width: 900px;
 }
 #menu > ul.left {
-	float: left;
+    float: left;
 }
 #menu > ul.right {
-	float: right;
+    float: right;
 }
 #menu > ul {
-	position: relative;
-	margin: 0;
-	padding: 0;
+    position: relative;
+    margin: 0;
+    padding: 0;
 }
 #menu > ul ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	background: url('../image/transparent.png');
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: url('../image/transparent.png');
 }
 #menu > ul a {
-	display: block;
-	color: #FFFFFF;
-	text-decoration: none;
-	padding: 5px;
+    display: block;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 5px;
 }
 #menu > ul > li + li {
-	background: url('../image/split.png') center left no-repeat;
+    background: url('../image/split.png') center left no-repeat;
 }
 #menu > ul .top, #menu > ul li li.sfhover {
-	padding: 10px 15px 9px 17px;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 12px;
-	color: #FFFFFF;
-	text-align: center;
+    padding: 10px 15px 9px 17px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #FFFFFF;
+    text-align: center;
 }
 #menu > ul ul li {
-	padding: 2px;
+    padding: 2px;
 }
 #menu > ul .selected .top {
-	background: url('../image/selected.png') repeat-x;
-	color: #FFFFFF;
+    background: url('../image/selected.png') repeat-x;
+    color: #FFFFFF;
 }
 #menu > ul .selected:hover a.top, #menu > ul .sfhover a.top {
 }
 #menu > ul .parent {
-	background: url('../image/arrow-right.png') 95% center no-repeat;
+    background: url('../image/arrow-right.png') 95% center no-repeat;
 }
 #menu > ul li {
-	float: left;
-	list-style: none;
+    float: left;
+    list-style: none;
 }
 #menu > ul li ul {
-	position: absolute;
+    position: absolute;
 }
 #menu > ul li li {
-	clear: both;
+    clear: both;
 }
 #menu > ul li ul a {
-	color: #FFFFFF;
-	height: 15px;
-	width: 145px;
+    color: #FFFFFF;
+    height: 15px;
+    width: 145px;
 }
 #menu > ul li ul ul {
-	margin: -27px 0 0 157px;
+    margin: -27px 0 0 157px;
 }
 #menu > ul li li:hover, #menu > ul li li.sfhover {
-	background: #333;
-	color: #000000;
+    background: #333;
+    color: #000000;
 }
 

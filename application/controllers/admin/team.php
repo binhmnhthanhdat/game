@@ -56,7 +56,7 @@ class Team extends Admin_controller {
         $config['num_links'] = 10;
         $this->pagination->initialize($config);
         $data['page'] = $this->pagination->create_links();
-        
+
         $data['teams'] = $this->team->getList(array('name', 'id', 'position', 'image', 'ord'), null, array('id' => 'desc'), array('max' => $config['per_page'], 'begin' => $this->uri->segment(4)));
         $data['render_path'] = array('Admin' => $this->index_url . 'admin', 'Danh sách team' => '#');
         $data['heading_title'] = 'Danh sách team';

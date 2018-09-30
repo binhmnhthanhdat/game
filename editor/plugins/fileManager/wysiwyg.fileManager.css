@@ -6,7 +6,7 @@
  * Uses the Silk Icon Set: http://www.famfamfam.com/lab/icons/silk/
  * The Silk Icon Set is released under CC-3.0/2.5  and was created by FAMFAMFAM.
  */
- 
+
 div.wysiwyg ul.toolbar li.fileManager, div.wysiwyg-fileManager { background: url('../../../data_uploads/product/editor/plugins/fileManager/icon.png'); }
 div.wysiwyg-fileManager { width:16px; height:16px; cursor: pointer; cursor: hand; }
 
@@ -23,11 +23,11 @@ div.wysiwyg-fileManager { width:16px; height:16px; cursor: pointer; cursor: hand
 
 /* CSS3 for fun */
 .wysiwyg-files-wrapper li {
-	-moz-transition: all 0.5s ease-out;  /* FF4+ */
-	-o-transition: all 0.5s ease-out;  /* Opera 10.5+ */
-	-webkit-transition: all 0.5s ease-out;  /* Saf3.2+, Chrome */
-	-ms-transition: all 0.5s ease-out;  /* IE10? */
-	 transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;  /* FF4+ */
+    -o-transition: all 0.5s ease-out;  /* Opera 10.5+ */
+    -webkit-transition: all 0.5s ease-out;  /* Saf3.2+, Chrome */
+    -ms-transition: all 0.5s ease-out;  /* IE10? */
+    transition: all 0.5s ease-out;
 }
 
 .wysiwyg-files-wrapper ul { padding:0px; margin:0px; }
@@ -51,8 +51,8 @@ div.wysiwyg-fileManager { width:16px; height:16px; cursor: pointer; cursor: hand
 /*
  * Below is the list of file-types classes.
  */
- 
- /* This REALLY needs to become a sprite */
+
+/* This REALLY needs to become a sprite */
 .wysiwyg-files-wrapper li.wysiwyg-files-3gp { background: url(../../../data_uploads/product/editor/plugins/fileManager/images/film.png) left top no-repeat; }
 .wysiwyg-files-wrapper li.wysiwyg-files-afp { background: url(../../../data_uploads/product/editor/plugins/fileManager/images/code.png) left top no-repeat; }
 .wysiwyg-files-wrapper li.wysiwyg-files-afpa { background: url(../../../data_uploads/product/editor/plugins/fileManager/images/code.png) left top no-repeat; }

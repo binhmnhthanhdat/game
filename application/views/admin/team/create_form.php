@@ -81,7 +81,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?php endif; ?>                                   	
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td width="169" align="left"><label>Giới thiệu:</label><br><span class="help">Mô tả thông tin chi tiết</span></label></td>
                                 <td width="922">
@@ -93,7 +93,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('description'); ?>
                                 </td>
                             </tr>
-                           
+
                             <tr>
                                 <td width="169" align="left"><label>Thứ tự:</label></td>
                                 <td width="922">

@@ -83,12 +83,11 @@ class Tintuc_model extends CI_Model {
         $q = $this->db->get($this->table);
         $result = $q->row();
         if ($q->num_rows() > 0) {
-            return array (
+            return array(
                 'title' => $result->title,
                 'metades' => $result->metades,
                 'metakey' => $result->metakey,
-                );
-            
+            );
         } else {
             return FALSE;
         }

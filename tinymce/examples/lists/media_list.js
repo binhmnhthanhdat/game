@@ -3,8 +3,8 @@
 // option is defined in TinyMCE init.
 
 var tinyMCEMediaList = [
-	// Name, URL
-	["Some Flash", "media/sample.swf"],
-	["Some Quicktime", "media/sample.mov"],
-	["Some AVI", "media/sample.avi"]
+    // Name, URL
+    ["Some Flash", "media/sample.swf"],
+    ["Some Quicktime", "media/sample.mov"],
+    ["Some AVI", "media/sample.avi"]
 ];

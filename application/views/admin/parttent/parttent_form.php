@@ -61,7 +61,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                 </td>
                             </tr>
 
-                            
+
 
                             <tr>
                                 <td width="169" align="left"><label>Hình ảnh:</label></td>
@@ -84,7 +84,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('url'); ?>
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td width="169" align="left"><label>Giới thiệu:</label><br><span class="help">Mô tả thông tin chi tiết</span></label></td>
                                 <td width="922">
@@ -96,7 +96,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('description'); ?>
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td width="169" align="left"><label>Thứ tự:</label></td>
                                 <td width="922">
@@ -111,8 +111,12 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                             <tr>
                                 <td align="left"><label>Trạng thái:</label><br /><span class="help">Nếu muốn hiển thị thì Click chọn</span></td>
                                 <td>
-                                    <input type="checkbox" name="active" <?php if (@$article->active == 1) echo "checked=checked";
-                                    else ""; ?>/>
+                                    <input type="checkbox" name="active" <?php
+                                    if (@$article->active == 1)
+                                        echo "checked=checked";
+                                    else
+                                        "";
+                                    ?>/>
 
                                     <?= form_error('active'); ?>
                                 </td>

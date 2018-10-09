@@ -18,6 +18,10 @@ class menu_model extends CI_Model {
     function __construct() {
 
         parent:: __construct();
+        $language=$this->session->userdata('language');
+        if ($language == 'vi') {
+            $this->table = 'cat_news_vi';
+        }
     }
 
     function add($data) {

@@ -12,12 +12,16 @@ if (!defined('BASEPATH'))
   ------------------------------------------------ */
 
 class Cat_news_model extends CI_Model {
-
+    
     var $table = 'cat_news';
 
     function __construct() {
 
         parent:: __construct();
+        $language=$this->session->userdata('language');
+        if ($language == 'vi') {
+            $this->table = 'cat_news_vi';
+        }
     }
 
     function add($data) {

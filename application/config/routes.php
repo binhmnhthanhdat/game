@@ -50,6 +50,7 @@ $route['careers'] = 'home/careers';
 $route['contact'] = 'home/contact';
 $route['gioi-thieu'] = 'introduc/index';
 $route['gioi-thieu/(:num)(:any)'] = 'introduc/intro/$1';
+$route['language/(:any)'] = 'home/language/$1';
 $route['khuyen-mai'] = 'promotion';
 $route['doi-tac'] = 'partner';
 $route['dich-vu'] = 'service';

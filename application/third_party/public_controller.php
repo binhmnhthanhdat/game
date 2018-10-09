@@ -16,7 +16,7 @@ class Public_controller extends CI_Controller {
     function __construct() {
 
         parent:: __construct();
-
+        $this->load->library('session');
         date_default_timezone_set('Asia/Bangkok'); // Set date_time theo thuan
 
         $this->load->library('util');

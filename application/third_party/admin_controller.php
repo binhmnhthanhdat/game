@@ -20,7 +20,7 @@ class Admin_controller extends CI_Controller {
         parent::__construct();
 
         date_default_timezone_set('Asia/Bangkok');
-
+        $this->load->library('session');
         //Load util library
         $this->load->library('util');
 

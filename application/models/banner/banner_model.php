@@ -18,6 +18,10 @@ class Banner_model extends CI_Model {
     function __construct() {
 
         parent:: __construct();
+        $language=$this->session->userdata('language');
+        if ($language == 'vi') {
+            $this->table = 'slide_vi';
+        }
     }
 
     function add($data) {

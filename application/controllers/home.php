@@ -44,7 +44,7 @@ class Home extends Public_controller {
         $cats = $this->cat_news->get_cat_news_where(array('active' => 1, 'link' => $uri), array('ord' => 'asc'), null)->result();
         $team = $this->team->get_team_where(null, array('ord' => 'asc'), null)->result();
         $data['news'] = $this->tin->getList(null, array('type' => 1), array('id' => 'asc'), null)->result();
-        $data['parttent'] = $this->parttent->get_parttent_where(null, array('ord' => 'asc'), null)->result();
+        $data['parttent'] = $this->parttent->get_parttent_where(array('active' => 1), array('ord' => 'asc'), null)->result();
         $data['cats'] = $cats;
         $this->site_title = !empty($cats[0]) ? $cats[0]->name : '';
         $this->render($this->load->view('work', $data, TRUE), '3col');
@@ -78,5 +78,9 @@ class Home extends Public_controller {
         $this->site_title = !empty($cats[0]) ? $cats[0]->name : '';
         $this->render($this->load->view('careers', $data, TRUE), '3col');
     }
-
+    
+    public function language($lang) {
+        $this->session->set_userdata('language', $lang);
+        redirect(base_url());
+    }
 }

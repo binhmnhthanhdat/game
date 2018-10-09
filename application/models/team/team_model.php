@@ -16,6 +16,10 @@ class Team_model extends CI_Model {
 
     function __construct() {
         parent:: __construct();
+        $language=$this->session->userdata('language');
+        if ($language == 'vi') {
+            $this->table = 'team_vi';
+        }
     }
 
     public function add($data) {

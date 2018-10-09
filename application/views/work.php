@@ -75,10 +75,10 @@
             </a>
         </div>
     </div>
-
+    <?php if (!empty($parttent)) : ?> 
     <h2 class="smallTitle bold uppercase hasBorder">Other things we&#039;ve done</h2>
     <div id="projectsWrapper" class="negMar10 negMar0-xs clearFix">
-        <?php if (!empty($parttent)) : ?> 
+        
             <?php foreach ($parttent as $iparttent) : ?>
                 <div class="otherProject darkGrey block col-4 col-sm-6 col-xs-12 lPad10 rPad10 bMar60">
                     <div class="bMar20">
@@ -90,9 +90,10 @@
                     </div>
                 </div>
             <?php endforeach; ?>					
-        <?php endif; ?>
+        
         <span class="clearFix hidden-sm"></span>		
     </div>
+    <?php endif; ?>
 </div>
 
 <div id="popupGalleryWrapper" class="hidden">
@@ -101,8 +102,8 @@
             <div id="popupImage" class="relative autoMar"></div>
         </div>
         <div id="popupGalleryText" class="maxWidth480 tPad20"></div>
-        <a href="http://www.wishstudios.co.uk/#" class="galleryArrow" id="galleryPrev"></a>
-        <a href="http://www.wishstudios.co.uk/#" class="galleryArrow" id="galleryNext"></a>
-        <a href="http://www.wishstudios.co.uk/#" id="galleryClose"></a>
+        <a href="<?php echo base_url();?>#" class="galleryArrow" id="galleryPrev"></a>
+        <a href="<?php echo base_url();?>#" class="galleryArrow" id="galleryNext"></a>
+        <a href="<?php echo base_url();?>#" id="galleryClose"></a>
     </div>
 </div>

@@ -60,15 +60,6 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('name'); ?>
                                 </td>
                             </tr>
-                            <?
-                            //       'id' 		=> $result->id,
-                            //					'name' 		=> $result->name,
-                            //					'contents'		=> $result->contents,
-                            //					'img'		=> $result->img,
-                            //					'url'		=> $result->url,
-                            //					'ord'		=> $result->ord,
-                            //					'active'		=> $result->active,\?>
-
                             <tr>
                                 <td width="169" align="left"><label>Hình ảnh:</label></td>
                                 <td width="922">
@@ -76,6 +67,14 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?php if (@$article->img != '') : ?>
                                         <img src="<?= base_url(); ?><?= @@$article->img; ?>" width="200" height="200">
                                     <?php endif; ?>   
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="169" align="left"><label>Fomat Image</label></td>
+                                <td width="922">
+                                    Chiều rộng: <input name="width" type="text" id="width" value="<?php echo @$article->width; ?>" size="12"  readonly="true"/> px<br><hr>
+                                    Chiều cao: <input name="height" type="text" id="height" value="<?php echo @$article->height; ?>" size="12"  readonly="true"/> px<br><hr>
+                                    Margin: <input name="style" type="text" id="style" value="<?php echo @$article->style; ?>" size="50" readonly="true" />
                                 </td>
                             </tr>
                             <tr>
@@ -108,9 +107,9 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                 <td width="169" align="left"><label>Thứ tự:</label></td>
                                 <td width="922">
                                     <?php if (@$article->ord != '') : ?>
-                                        <input name="ord" type="text" id="ord" value="<?php echo @$article->ord; ?>" size="100" />
+                                    <input name="ord" type="text" id="ord" value="<?php echo @$article->ord; ?>" size="100" readonly="true"/>
                                     <?php else : ?>
-                                        <input name="ord" type="text" id="url" value="<?php echo set_value('ord'); ?>" size="100" />
+                                        <input name="ord" type="text" id="url" value="<?php echo set_value('ord'); ?>" size="100" readonly="true"/>
                                     <?php endif; ?>
                                     <?= form_error('ord'); ?>
                                 </td>
@@ -125,7 +124,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                         "";
                                     ?>/>
 
-<?= form_error('active'); ?>
+                                    <?= form_error('active'); ?>
                                 </td>
                         </tbody>
                     </table>

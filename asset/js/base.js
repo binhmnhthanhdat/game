@@ -221,13 +221,13 @@ var Base = (function () {
                 Base.galleryTotal = $('#imageGallery .galleryItem').length;
 
             // Vimeo player
-            if ($('#homeVideo').length) {
-                var $iframe = $('#homeVideo iframe');
-                var player = new Vimeo.Player($iframe);
-                player.setVolume(0);
-                player.setLoop(true);
-                player.play();
-            }
+//            if ($('#homeVideo').length) {
+//                var $iframe = $('#homeVideo iframe');
+//                var player = new Vimeo.Player($iframe);
+//                player.setVolume(0);
+//                player.setLoop(true);
+//                player.play();
+//            }
 
             // Mobile menu open
             $('#menuIcon').on('vclick', function (e) {

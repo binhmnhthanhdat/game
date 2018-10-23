@@ -95,11 +95,6 @@ class Slide extends Admin_controller {
 
         $this->form_validation->set_rules('name', 'Name', 'trim|required');
 
-
-        //$this->form_validation->set_rules('ord', 'Sap xep', 'trim|required');
-        //$this->form_validation->set_rules('', 'Name', 'trim|required');
-        //$this->form_validation->set_rules('show_home', 'Show home', '');
-
         $data['name'] = $this->input->post('name');
         $data['active'] = ($this->input->post('active') == 'on') ? 1 : 0;
         $data['ord'] = $this->input->post('ord');
@@ -118,14 +113,7 @@ class Slide extends Admin_controller {
             $this->load->library('upload', $config);
             $this->upload->do_upload();
             $image_data = $this->upload->data();
-            //$avatar ='images/tintuc/'.$image_data['file_name'];
-
-
-
-
-
-
-
+        
             if ($image_data['file_name'] != '') {
                 if ($oldImage != '') {
                     $this->deleteFile($oldImage);

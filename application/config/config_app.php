@@ -37,6 +37,7 @@ $config['mail_webmaster_text'] = 'Ban quản trị - www.choqng.com';
 /* * ********* File configs ********** */
 $config['upload_team_dir'] = 'data_uploads/team/';
 $config['upload_news_dir'] = 'data_uploads/tin_tuc/';
+$config['upload_develop_dir'] = 'data_uploads/develop/';
 $config['upload_product_dir'] = 'data_uploads/product/';
 $config['upload_product_thumb_dir'] = 'data_uploads/product/thumb/';
 $config['upload_homecontent'] = 'data_uploads/homecontent/';

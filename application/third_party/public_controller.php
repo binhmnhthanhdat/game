@@ -23,7 +23,7 @@ class Public_controller extends CI_Controller {
         $this->load->helper('date');
  
         $this->load->model('cat_news/cat_news_model', 'cat_news');
-        $this->load->model('banner/banner_model', 'banner');
+        $this->load->model('slide/slide_model', 'slide');
         $this->load->model('other/setting_model', 'setting');
         $this->load->model('homecontent/homecontent_model', 'homecontent');
         $this->load->model('parttent/parttent_model', 'parttent');
@@ -71,7 +71,6 @@ class Public_controller extends CI_Controller {
     function render($content, $layout) {
         
         $data['header'] = $this->headers();
-        $data['menu'] = $this->menu();
         $data['footer'] = $this->footer();
         $data['content'] = $content;
 
@@ -83,81 +82,6 @@ class Public_controller extends CI_Controller {
         $cats = $this->cat_news->get_cat_news_where(array('active' => 1), array('ord' => 'asc'), null)->result();
         $data['cats'] = $cats;
         return $this->load->view('common/headers', $data, TRUE);
-    }
-
-    public function menu() {
-
-        $data = array();
-        $cats = $this->cat_news->get_cat_news_where(array('active' => 1), array('ord' => 'asc'), null)->result();
-        if ($cats) {
-
-            foreach ($cats as $cat) {
-                if ($cat->parent == 0) {
-                    $list_cats[$cat->id] = array();
-                    $list_cats[$cat->id]['id'] = $cat->id;
-                    $list_cats[$cat->id]['name'] = $cat->name;
-                    $list_cats[$cat->id]['alias'] = $cat->alias;
-                    $list_cats[$cat->id]['link'] = $cat->link;
-                    $list_cats[$cat->id]['type'] = $cat->type;
-                    $list_cats[$cat->id]['active'] = $cat->active;
-                    $list_cats[$cat->id]['ord'] = $cat->ord;
-                    $list_cats[$cat->id]['parent'] = $cat->parent;
-                    $list_cats[$cat->id]['cat_sub'] = array();
-                    $list_cats[$cat->id]['cat_sub'] = $this->cat_news->get_cat_news_where(array('parent' => $cat->id), array('ord' => 'asc'), null)->result();
-                    ;
-                }
-            }
-        }
-
-        $data['cats'] = $list_cats;
-        return $this->load->view('common/menu', $data, TRUE);
-    }
-
-    public function banner() {
-
-        $data = array();
-        $data['cats'] = $this->banner->get_banner_where(null, array('ord' => 'asc'), null)->result();
-        return $this->load->view('common/banner', $data, TRUE);
-    }
-
-    public function left() {
-
-        $data = array();
-        $cats = $this->category->get_category_where(null, array('ord' => 'asc'), null)->result();
-
-        if ($cats) {
-
-            foreach ($cats as $cat) {
-                if ($cat->parent == 0) {
-                    $list_cats[$cat->catid] = array();
-                    $list_cats[$cat->catid]['catid'] = $cat->catid;
-                    $list_cats[$cat->catid]['cat_name'] = $cat->cat_name;
-                    $list_cats[$cat->catid]['alias'] = $cat->alias;
-                    $list_cats[$cat->catid]['show_home'] = $cat->show_home;
-                    $list_cats[$cat->catid]['parent'] = $cat->parent;
-                    $list_cats[$cat->catid]['cat_sub'] = array();
-                    $list_cats[$cat->catid]['cat_sub'] = $this->category->get_category_where(array('parent' => $cat->catid), array('ord' => 'asc'), null)->result();
-                    ;
-                }
-            }
-        }
-        $data['cats'] = $list_cats;
-
-
-        $data['product_noibat'] = $this->product->get_all_pro(array('id', 'p_name', 'p_name_alias', 'status', 'p_image_thumb', 'catid', 'gia', 'khuyenmai', 'noibat', 'p_description'), null, null, 1, null, 1, null, array('id' => 'desc'), array('max' => 10, 'begin' => 0));
-        $data['product_khuyenmai'] = $this->product->get_all_pro(array('id', 'p_name', 'p_name_alias', 'status', 'p_image_thumb', 'catid', 'gia', 'khuyenmai', 'noibat', 'p_description'), null, null, null, 1, 1, null, array('id' => 'desc'), array('max' => 10, 'begin' => 0));
-        return $this->load->view('common/left', $data, TRUE);
-    }
-
-    public function right() {
-
-        $data = array();
-
-        //	$data['cats'] = $this->category->get_category_where(null, null, null)->result();
-//		$data['news'] = $this->tin->getList(null, null, array('id' => 'desc'), array('max' => 30, 'begin' => 0))->result();
-//		$data['kts'] = $this->kt->getList(null, null, array('id' => 'desc'), array('max' => 30, 'begin' => 0))->result();
-//		return $this->load->view('common/right', $data, TRUE);	
-//		
     }
 
     public function footer() {

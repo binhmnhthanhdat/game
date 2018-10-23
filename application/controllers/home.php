@@ -45,6 +45,7 @@ class Home extends Public_controller {
         $team = $this->team->get_team_where(null, array('ord' => 'asc'), null)->result();
         $data['news'] = $this->tin->getList(null, array('type' => 1), array('id' => 'asc'), null)->result();
         $data['parttent'] = $this->parttent->get_parttent_where(array('active' => 1), array('ord' => 'asc'), null)->result();
+        $data['gallery'] = $this->slide->get_slide_where(array('active' => 1), array('ord' => 'asc'), null)->result();
         $data['cats'] = $cats;
         $this->site_title = !empty($cats[0]) ? $cats[0]->name : '';
         $this->render($this->load->view('work', $data, TRUE), '3col');
@@ -82,5 +83,44 @@ class Home extends Public_controller {
     public function language($lang) {
         $this->session->set_userdata('language', $lang);
         redirect(base_url());
+    }
+    
+    public function developer() {
+        $data = array();
+        $this->site_title = 'Developer';
+        $this->render($this->load->view('developer', $data, TRUE), '3col');
+    }
+    
+    public function developersuccess() {
+        $data = array();
+        $this->site_title = 'Developer';
+        $this->render($this->load->view('developersuccess', $data, TRUE), '3col');
+    }
+    
+    function developersubmit() {
+        $this->site_title = 'Developer';
+        $this->load->model('develop/develop_model');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('name', 'Name', 'trim|required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
+        $this->form_validation->set_rules('subject', 'Subject', 'required');
+        $this->form_validation->set_rules('message', 'Sessage', 'trim|required');
+        if ($this->form_validation->run() == False) {
+            redirect('/developer');
+        } else {
+            if ($_FILES['fileattack']['name'] != '') {
+                $file_field = $_FILES['fileattack']['name'];
+                $file_name_field = 'fileattack';
+                $upload_path = $this->config->item('upload_develop_dir');
+ 
+                if ($result = $this->util->upload($upload_path, 1024, 1024, $file_field, $file_name_field)) {
+                    $filepath = $result['full_path'];
+                    $filename = $result['file_name'];
+                    $data['image'] = $upload_path . $filename;
+                }
+            } 
+            $this->develop_model->submit($data['image']);
+            redirect('/developersuccess');
+        }
     }
 }

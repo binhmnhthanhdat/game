@@ -2,7 +2,7 @@
 <div id="footerTop" class="darkGreyBG tPad40 bPad40 white">
     <div class="row clearFix">
         <div class="col-3 col-sm-12 rPad20">
-            <a href="http://www.wishstudios.co.uk" id="footerLogo" class="block"></a>
+            <a href="<?php echo base_url();?>" id="footerLogo" class="block"></a>
         </div>
         <div class="col-3 col-sm-12 rPad20 clearFix">
             <h4 class="smallTitle uppercase bold">Contact</h4>
@@ -35,6 +35,15 @@
             <h4 class="smallTitle uppercase bold">Follow us</h4>
             <div>
                 <a class="footerIcon twitter" href="http://www.twitter.com/wishstudios" target="_blank">@wishstudios</a>
+            </div>
+            <div style="margin-top:30px">
+                <h4 class="smallTitle uppercase bold">Language</h4>
+                <a href="<?php echo base_url();?>language/en" style="float:left; width:100%">
+                    <img src="<?php echo base_url();?>images/icon_lang_en.gif" style="display: inline!important"  alt="English"> English
+                </a>
+                <a href="<?php echo base_url();?>language/vi" style="float:left; width:100%">
+                    <img src="<?php echo base_url();?>images/icon_lang_vn.gif" style="display: inline!important"   alt="VietNam"> VietNam
+                </a>
             </div>
         </div>
     </div>

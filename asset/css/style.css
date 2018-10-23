@@ -27,7 +27,33 @@ html, body {
 ul, ol, li {
     list-style: none;
 }
+@font-face{
+    font-family: FontMenu;
+    src: url(../../fonts/Montserrat-ExtraBold.ttf);
+    font-weight:normal;
+    font-style:normal;
+}
 
+@font-face{
+    font-family: FontMedium;
+    src: url(../../fonts/Montserrat-Medium.ttf);
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face{
+    font-family: FontLight;
+    src: url(../../fonts/Montserrat-Light.ttf);
+    font-weight:normal;
+    font-style:normal;
+}
+
+@font-face{
+    font-family: FontSemiBold;
+    src: url(../../fonts/Montserrat-SemiBold.ttf);
+    font-weight:normal;
+    font-style:normal;
+}
 /* Grid */
 .row {
     margin-left: auto;
@@ -74,7 +100,7 @@ ul, ol, li {
 }
 
 .col-1 {
-    width: 8.333%;
+    width: 8.111111%;
 }
 
 .col-2 {
@@ -86,7 +112,7 @@ ul, ol, li {
 }
 
 .col-4 {
-    width: 33.333%;
+    width: 33.111111%;
 }
 
 .col-5 {
@@ -98,7 +124,7 @@ ul, ol, li {
 }
 
 .col-7 {
-    width: 58.333%;
+    width: 58.111111%;
 }
 
 .col-8 {
@@ -110,7 +136,7 @@ ul, ol, li {
 }
 
 .col-10 {
-    width: 83.333%;
+    width: 83.111111%;
 }
 
 .col-11 {
@@ -131,7 +157,7 @@ ul, ol, li {
     }
 
     .col-lg-1 {
-        width: 8.333%;
+        width: 8.111111%;
     }
 
     .col-lg-2 {
@@ -143,7 +169,7 @@ ul, ol, li {
     }
 
     .col-lg-4 {
-        width: 33.333%;
+        width: 33.111111%;
     }
 
     .col-lg-5 {
@@ -155,7 +181,7 @@ ul, ol, li {
     }
 
     .col-lg-7 {
-        width: 58.333%;
+        width: 58.111111%;
     }
 
     .col-lg-8 {
@@ -167,7 +193,7 @@ ul, ol, li {
     }
 
     .col-lg-10 {
-        width: 83.333%;
+        width: 83.111111%;
     }
 
     .col-lg-11 {
@@ -196,7 +222,7 @@ ul, ol, li {
     }
 
     .col-md-1 {
-        width: 8.333%;
+        width: 8.111111%;
     }
 
     .col-md-2 {
@@ -208,7 +234,7 @@ ul, ol, li {
     }
 
     .col-md-4 {
-        width: 33.333%;
+        width: 33.111111%;
     }
 
     .col-md-5 {
@@ -220,7 +246,7 @@ ul, ol, li {
     }
 
     .col-md-7 {
-        width: 58.333%;
+        width: 58.111111%;
     }
 
     .col-md-8 {
@@ -232,7 +258,7 @@ ul, ol, li {
     }
 
     .col-md-10 {
-        width: 83.333%;
+        width: 83.111111%;
     }
 
     .col-md-11 {
@@ -261,7 +287,7 @@ ul, ol, li {
     }
 
     .col-sm-1 {
-        width: 8.333%;
+        width: 8.111111%;
     }
 
     .col-sm-2 {
@@ -273,7 +299,7 @@ ul, ol, li {
     }
 
     .col-sm-4 {
-        width: 33.333%;
+        width: 33.111111%;
     }
 
     .col-sm-5 {
@@ -285,7 +311,7 @@ ul, ol, li {
     }
 
     .col-sm-7 {
-        width: 58.333%;
+        width: 58.111111%;
     }
 
     .col-sm-8 {
@@ -297,7 +323,7 @@ ul, ol, li {
     }
 
     .col-sm-10 {
-        width: 83.333%;
+        width: 83.111111%;
     }
 
     .col-sm-11 {
@@ -326,7 +352,7 @@ ul, ol, li {
     }
 
     .col-xs-1 {
-        width: 8.333%;
+        width: 8.111111%;
     }
 
     .col-xs-2 {
@@ -338,7 +364,7 @@ ul, ol, li {
     }
 
     .col-xs-4 {
-        width: 33.333%;
+        width: 33.111111%;
     }
 
     .col-xs-5 {
@@ -350,7 +376,7 @@ ul, ol, li {
     }
 
     .col-xs-7 {
-        width: 58.333%;
+        width: 58.111111%;
     }
 
     .col-xs-8 {
@@ -362,7 +388,7 @@ ul, ol, li {
     }
 
     .col-xs-10 {
-        width: 83.333%;
+        width: 83.111111%;
     }
 
     .col-xs-11 {
@@ -653,7 +679,7 @@ ul, ol, li {
 }
 
 .darkGrey {
-    color: #333;
+    color: #111111;
 }
 
 .grey {
@@ -661,7 +687,7 @@ ul, ol, li {
 }
 
 .darkGreyBG {
-    background-color: #333;
+    background-color: #111111;
 }
 
 .greyBG {
@@ -675,6 +701,9 @@ ul, ol, li {
 .whiteBG {
     background-color: #FFF;
 }
+.colorFooter{
+    color: #a6a6a6;
+}
 
 .redBorder {
     border-color: #5EA09D !important;
@@ -682,11 +711,11 @@ ul, ol, li {
 
 /* Typography */
 html, body, h1, h2, h3, h4, h5, h6, .vCentre, .fontReset {
-    font-size: 11px;
+    font-size: 12px;
 }
 
 html, body {
-    font-family: Glegoo, Courier, Georgia, "Times New Roman", serif;
+    font-family: FontLight, Glegoo, Courier, Georgia, "Times New Roman", serif;
     font-weight: 700;
 }
 
@@ -701,13 +730,28 @@ p {
 }
 
 .sans {
-    font-family: sofia-pro-n4, sofia-pro, Arial, Helvetica, sans-serif;
+    font-family: FontMedium, sofia-pro-n4, sofia-pro, Arial, Helvetica, sans-serif;
     font-weight: 400;
 }
+.MontserratMedium {
+    font-family: FontMedium;
+    font-weight: normal;
+    font-size: 24px;
+}
 
+.MontserratLight {
+    font-family: FontLight;
+    font-weight: normal;
+    font-size: 19px;
+}
+.FontSemiBold {
+    font-family: FontSemiBold;
+    font-weight: normal;
+    font-size: 40px;
+}
 .bold {
-    font-family: sofia-pro-n7, sofia-pro, Arial, Helvetica, sans-serif;
-    font-weight: 700;
+    
+    font-weight: bold;
 }
 
 .large {
@@ -732,13 +776,13 @@ p {
 }
 
 .smallTitle {
-    font-size: 9px;
-    letter-spacing: 0.6em;
+/*    font-size: 9px;*/
+    letter-spacing: 0.2em;
     margin: 0 0 1em;
 }
 
 .hasBorder:after {
-    background: #333;
+    background: #111111;
     content: "";
     display: block;
     height: 2px;
@@ -746,7 +790,7 @@ p {
     width: 30px;
 }
 .hasBorder.smallTitle {
-    margin-bottom: 3em;
+    margin-bottom: 1em;
 }
 .hasBorder.smallTitle:after {
     margin-top: 1.5em;
@@ -884,7 +928,7 @@ a {
     transition: background-color 0.3s, border-color 0.3s, color 0.3s;
 }
 a:hover {
-    color: #333;
+    color: #111111;
 }
 a.block {
     display: block;
@@ -1187,12 +1231,13 @@ a#menuClose {
     display: none;
 }
 #navWrapper li a {
-    color: #333;
+    color: #111111;
     display: inline-block;
-    font-size: 9px;
-    height: 9px;
+    font-family: FontMenu;
+    font-size: 12px;
+    height: 12px;
     letter-spacing: 0.69em;
-    line-height: 9px;
+    line-height: 12px;
     padding-left: 0.4em;
     position: relative;
     vertical-align: top;
@@ -1201,10 +1246,10 @@ a#menuClose {
     color: #5EA09D;
 }
 #navWrapper li.current_page_item > a, #navWrapper li.current-page-ancestor > a {
-    color: #333 !important;
+    color: #111111 !important;
 }
 #navWrapper li.current_page_item > a:after, #navWrapper li.current-page-ancestor > a:after {
-    background: #333;
+    background: #111111;
     bottom: -15px;
     content: "";
     height: 2px;
@@ -1234,7 +1279,7 @@ a#menuClose {
     }
 
     #navWrapper {
-        background: #333;
+        background: #111111;
         bottom: 0;
         display: none;
         font-size: 0;
@@ -1314,8 +1359,8 @@ a#menuClose {
 
 a#footerLogo {
     background: url(images/logo-footer.png) no-repeat;
-    height: 86px;
-    width: 110px;
+    height: 110px;
+    width: 185px;
 }
 a#footerLogo:hover {
     background-position: 0 -86px;
@@ -1413,7 +1458,7 @@ a#footerLogo:hover {
     background-position: 0 -18px;
 }
 .tweetWrapper:hover .tweet {
-    background-color: #333;
+    background-color: #111111;
     color: #FFF;
 }
 .tweetWrapper:hover .tweet a:hover {
@@ -1468,7 +1513,7 @@ a#footerLogo:hover {
 }
 /* Homepage */
 .home #logo:after {
-    background: #333;
+    background: #111111;
     bottom: -16px;
     content: "";
     height: 2px;
@@ -1502,13 +1547,13 @@ a#footerLogo:hover {
     bottom: 0;
     position: absolute;
     top: 0;
-    width: 33.333%;
+    width: 33.111111%;
 }
 #imageGallery .galleryBlock#block1 {
     left: 0;
 }
 #imageGallery .galleryBlock#block2 {
-    left: 33.333%;
+    left: 33.111111%;
 }
 #imageGallery .galleryBlock#block3 {
     left: 66.666%;
@@ -1579,7 +1624,7 @@ a.otherProject h3:hover {
 }
 
 #pageNav {
-    border-top: 2px solid #333;
+    border-top: 2px solid #111111;
 }
 
 a.projectArrow {
@@ -1625,7 +1670,7 @@ a.projectArrow.nextArrow:hover:before {
         padding-bottom: 240%;
     }
     #imageGallery .galleryBlock {
-        height: 33.333%;
+        height: 33.111111%;
         left: 0 !important;
         width: 100%;
     }
@@ -1633,7 +1678,7 @@ a.projectArrow.nextArrow:hover:before {
         top: 0;
     }
     #imageGallery .galleryBlock#block2 {
-        top: 33.333%;
+        top: 33.111111%;
     }
     #imageGallery .galleryBlock#block3 {
         top: 66.666%;

@@ -30,12 +30,8 @@ class Setting_model extends CI_Model {
         $this->db->set('meta_key', $data['meta_key']);
         $this->db->set('meta_desc', $data['meta_desc']);
         //$this->db->set('site_status', $data['site_status']);
-        $this->db->set('google_analytics', $data['google_analytic']);
-        $this->db->set('per_page', $data['product_perpage']);
-        $this->db->set('address', $data['address']);
-        $this->db->set('phone', $data['phone']);
-
-        if ($this->db->update($this->table)) {
+        $this->db->set('footer', $data['footer']);
+          if ($this->db->update($this->table)) {
             return TRUE;
         } else {
             return FALSE;

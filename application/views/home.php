@@ -5,7 +5,7 @@
                 <div class="welcomeBox tPad40 bPad40 clearFix">
                     <div class="row half floatRight">
                         <div class="maxWidth480">
-                            <h1 class="sectionTitle sans bMar0"><?php echo $ihomecontent->title; ?></h1>
+                            <h1 class="sectionTitle  MontserratMedium bMar0"><?php echo $ihomecontent->title; ?></h1>
                         </div>
                     </div>
                 </div>
@@ -30,8 +30,8 @@
                         echo "floatRight";
                     }
                     ?>">
-                        <h2 class="smallTitle bold uppercase hasBorder"><?php echo $ihomecontent->title; ?></h2>
-                        <div class="large sans maxWidth480 cmsContent">
+                        <h2 class="smallTitle MontserratMedium bold uppercase hasBorder"><?php echo $ihomecontent->title; ?></h2>
+                        <div class="large MontserratLight maxWidth480 cmsContent">
                             <?php echo $ihomecontent->content; ?>
                         </div>
                     </div>
@@ -66,9 +66,9 @@
 <?php endif; ?>
 
 <div class="tMar60 row">
-    <h2 class="smallTitle bold uppercase hasBorder">What we&#039;ve been up to</h2>
+    <h2 class="MontserratMedium smallTitle bold uppercase hasBorder">What we&#039;ve been up to</h2>
     <div id="dragTip" class="bold uppercase grey centreText hidden-xxs">&lt; Drag</div>
-    <div id="twitterFeed" class="negMar10 bMar20 font0">
+    <div id="twitterFeed" class=" MontserratLight negMar10 bMar20 font0">
         <div class="tweetWrapper lPad10 rPad10" data-id="1045290404269174784">
             <div class="tweet fontReset lightGreyBG pad10">
                 <div class="tweetIcon bMar10 retweet"></div>

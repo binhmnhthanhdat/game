@@ -96,6 +96,11 @@ class Home extends Public_controller {
         $this->site_title = 'Developer';
         $this->render($this->load->view('developersuccess', $data, TRUE), '3col');
     }
+    public function policy() {
+        $data = array();
+        $this->site_title = 'Policy';
+        $this->render($this->load->view('policy', $data, TRUE), '3col');
+    }
     
     function developersubmit() {
         $this->site_title = 'Developer';

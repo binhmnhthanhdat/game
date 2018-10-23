@@ -23,6 +23,7 @@ class Setting extends Admin_controller {
 
         // Load model setting_model
         $this->load->model('other/setting_model', 'setting');
+        $this->load->library('ckeditor', array('instanceName' => 'CKEDITOR1', 'basePath' => base_url() . "ckeditor/", 'outPut' => true));
     }
 
     public function index() {
@@ -35,11 +36,8 @@ class Setting extends Admin_controller {
         $data['site_name'] = $this->input->post('site_title');
         $data['meta_key'] = $this->input->post('meta_key');
         $data['meta_desc'] = $this->input->post('meta_desc');
-        $data['site_status'] = $this->input->post('site_status');
-        $data['google_analytic'] = $this->input->post('google_analytics');
-        $data['product_perpage'] = $this->input->post('product_perpage');
-        $data['address'] = $this->input->post('address');
-        $data['phone'] = $this->input->post('phone');
+        
+        $data['footer'] = $this->input->post('description');
         $action = $this->input->post('_action');
 
         if ($action == 'let_go') {

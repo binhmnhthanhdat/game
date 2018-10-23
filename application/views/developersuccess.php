@@ -3,8 +3,7 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/util.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
 <!--===============================================================================================-->
-</head>
-<body>
+ 
     <div class="container-contact100">
         <div class="wrap-contact100">
             <form class="contact100-form validate-form"  action=" <?php echo base_url(); ?>send-lien-he" method="post" >

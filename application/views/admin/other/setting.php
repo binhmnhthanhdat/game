@@ -1,3 +1,27 @@
+
+<?php
+//tat ca cai nay dung de cau hinh cho ckeditter
+$config_mini = array();
+
+$config_mini['toolbar'] = array(
+    array('Source', '-', 'Bold', 'Italic', 'Underline', 'Strike', '-', 'Link', 'Unlink', 'Anchor', 'Image')
+);
+
+// B?n có th? dùng m?ng full tùy ch?n
+$config_mini = array(
+    array('Source', '-', 'Bold', 'Italic', 'Underline', '-', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', '-', 'NumberedList', 'BulletedList'));
+//---- Ho?c tùy bi?n kích thu?c
+$this->ckeditor->config['width'] = '800px';
+$this->ckeditor->config['height'] = '300px';
+
+/* Y la configuración del kcfinder, la debemos poner así si estamos trabajando en local */
+$config_mini['filebrowserBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.html";
+$config_mini['filebrowserImageBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.html?type=Images";
+$config_mini['filebrowserUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
+$config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
+
+//ket thuc cau hinh cho ckediter
+?>
 <div id="content">
     <div class="breadcrumb">
         <?php if ($render_path) : ?>
@@ -46,32 +70,17 @@
 
                                 </td>
                             </tr>
-                            <tr>
-                                <td align="left"><label>Số trang sản phẩm:</label></td>
-                                <td><input type="text" id="product_perpage" name="product_perpage" size="5" value="<?= @$setting->per_page; ?>" />
+                            
 
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td align="left"><label>Địa chỉ Cty:</label></td>
-                                <td>
-                                    <input type="text" id="address" name="address" size="50" value="<?= @$setting->address; ?>" />
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="left"><label>Điện thoại liên hệ:</label></td>
-                                <td>
-                                    <input type="text" id="phone" name="phone" size="50" value="<?= @$setting->phone; ?>" />
-
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="left"><label>Email:</label></td>
-                                <td>
-
-                                    <input type="text" id="google_analytics" name="google_analytics" size="50" value="<?= @$setting->google_analytics; ?>" />
+                           <tr>
+                                <td width="169" align="left"><label>Footer:</label><br><span class="help">Mô tả thông tin chi tiết</span></label></td>
+                                <td width="922">
+                                    <?php if (@$setting->footer != '') : ?>
+                                        <?php echo $this->ckeditor->editor("description", @$setting->footer, $config_mini); ?>
+                                    <?php else : ?>
+                                        <?php echo $this->ckeditor->editor("description", "", $config_mini); ?>
+                                    <?php endif; ?>
+                                    <?= form_error('description'); ?>
                                 </td>
                             </tr>
                         </tbody>

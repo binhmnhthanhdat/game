@@ -42,6 +42,7 @@
                 <ul>
                     <li><a href="<?= $this->index_url; ?>admin/slide">Quản lý Gallery</a></li>
                     <li><a href="<?= $this->index_url; ?>admin/parttent">Quản lý Other</a></li>
+                    <li><a href="<?= $this->index_url; ?>admin/team">Quản lý Team</a></li>
                 </ul>
             </li>
 
@@ -80,6 +81,7 @@
                     <li><a href="<?= $this->index_url; ?>admin/slide">Manament Gallery</a></li>
                     <li><a href="<?= $this->index_url; ?>admin/parttent">Manament Other</a></li>
                     <li><a href="<?= $this->index_url; ?>admin/develop">Manament Develop</a></li>
+                    <li><a href="<?= $this->index_url; ?>admin/team">Manament Team</a></li>
                 </ul>
             </li>
             

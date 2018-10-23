@@ -45,16 +45,7 @@
         <script type='text/javascript' src='<?php echo base_url(); ?>asset/js/external-tracking.min.js'></script>
         <link rel="canonical" href="http://test" />
         <link rel='shortlink' href='http://test' />
-        <script src="<?php echo base_url(); ?>asset/js/webfont.js"></script>
-        <script>
-            WebFont.load({
-                google: {
-                    families: ['Glegoo:700']
-                },
-                typekit: {
-                    id: 'ozh3ikz'
-                }
-            });</script>
+     
 
         <link href="<?php echo base_url(); ?>asset/css/style.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>asset/css/slick.css" rel="stylesheet">

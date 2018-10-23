@@ -3,39 +3,38 @@
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/util.css">
 <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/main.css">
 <!--===============================================================================================-->
-</head>
-<body>
+ 
     <div class="container-contact100">
         <div class="wrap-contact100">
             <form class="contact100-form validate-form"  action=" <?php echo base_url(); ?>developersubmit" method="post"  enctype="multipart/form-data" >
-                <span class="contact100-form-title">
+                <span class="contact100-form-title FontSemiBold">
                     We’d love to hear from you.
                 </span>
-                <p style="padding-bottom: 20px">
+                <p class = "MontserratMedium" style="padding-bottom: 20px;font-size: 19px;">
                     Whether you are looking for more information on game submission, or have general inquiries, fill out the form below and we’ll get back with you shortly.
                 </p>
                 <p></p>
                 <div class="wrap-input100 validate-input" data-validate="Name is required">
-                    <span class="label-input100">Your Name</span>
-                    <input class="input100" type="text" name="name" placeholder="Enter your name">
+                    <span class="label-input100 MontserratMedium">Your Name</span>
+                    <input class="input100 MontserratLight" type="text" name="name" placeholder="Enter your name">
                     <span class="focus-input100"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                    <span class="label-input100">Email</span>
-                    <input class="input100" type="text" name="email" placeholder="Enter your email addess">
+                    <span class="label-input100 MontserratMedium">Email</span>
+                    <input class="input100 MontserratLight" type="text" name="email" placeholder="Enter your email addess">
                     <span class="focus-input100"></span>
                 </div>
                 
                 <div class="wrap-input100 validate-input" data-validate = "Subject is required">
-                    <span class="label-input100">Subject</span>
-                    <input class="input100" type="text" name="subject" placeholder="Enter your Subject">
+                    <span class="label-input100 MontserratMedium">Subject</span>
+                    <input class="input100 MontserratLight" type="text" name="subject" placeholder="Enter your Subject">
                     <span class="focus-input100"></span>
                 </div>
                  
 
                 <div class="wrap-input100 input100-select">
-                    <span class="label-input100">Is This Regarding a Lion Stidion Game?</span>
+                    <span class="label-input100 MontserratMedium">Is This Regarding a Lion Stidion Game?</span>
                     <div>
                         <select class="selection-2" name="service">
                             <option value="If so, select one" selected="selected">If so, select one:</option>
@@ -49,13 +48,13 @@
                 </div>
                 
                 <div class="wrap-input100 validate-input" data-validate = "Subject is required">
-                    <span class="label-input100">File Attack</span>
+                    <span class="label-input100 MontserratMedium">File Attack</span>
                      <input type="file" class="form-control-file" name="fileattack">
                     <span class="focus-input100"></span>
                 </div>
                 
                 <div class="wrap-input100 validate-input" data-validate = "Message is required">
-                    <span class="label-input100">Message</span>
+                    <span class="label-input100 MontserratMedium">Message</span>
                     <textarea class="input100" name="message" placeholder="Your message here..."></textarea>
                     <span class="focus-input100"></span>
                 </div>
@@ -63,7 +62,7 @@
                 <div class="container-contact100-form-btn">
                     <div class="wrap-contact100-form-btn">
                         <div class="contact100-form-bgbtn"></div>
-                        <button class="contact100-form-btn">
+                        <button class="contact100-form-btn MontserratMedium">
                             <span>
                                 Submit
                                 <i class="fa fa-long-arrow-right m-l-7" aria-hidden="true"></i>

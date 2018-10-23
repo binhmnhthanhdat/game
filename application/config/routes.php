@@ -43,6 +43,7 @@ if (!defined('BASEPATH'))
 
 $route['default_controller'] = "home";
 $route['trang-chu'] = 'home';
+$route['policy'] = 'home/policy';
 $route['about'] = 'home/about';
 $route['work'] = 'home/work';
 $route['work/(:any)'] = 'home/detaiwork/$1';
@@ -54,33 +55,7 @@ $route['language/(:any)'] = 'home/language/$1';
 $route['developer'] = 'home/developer';
 $route['developersubmit'] = 'home/developersubmit';
 $route['developersuccess'] = 'home/developersuccess';
-$route['khuyen-mai'] = 'promotion';
-$route['doi-tac'] = 'partner';
-$route['dich-vu'] = 'service';
-$route['danh-muc-tin-tuc/(:num)(:any)'] = 'news/list_news/$1';
-$route['tin-tuc'] = 'news';
-
-$route['tin-tuc/page/(:num)'] = 'news/index/$1';
-$route['xem-tin/(:num)(:any)'] = 'news/detail/$1';
-$route['kien-thuc'] = 'kien_thuc';
-$route['kien-thuc/page/(:num)'] = 'kien_thuc/index/$1';
-$route['xem-kien-thuc/(:num)(:any)'] = 'kien_thuc/detail/$1';
-
-$route['san-pham'] = 'product/index';
-$route['san-pham/tim-kiem'] = 'product/search';
-$route['xem-danh-muc/(:num)(:any)'] = 'product/category/$1';
-$route['xem-danh-muc/(:num)(:any)/page/(:num)'] = 'product/category/$1/$2';
-$route['xem-san-pham/(:num)(:any)'] = 'product/detail/$1';
-
-$route['dich-vu'] = 'service/index';
-$route['danh-muc-dich-vu/(:num)(:any)'] = 'service/category/$1';
-$route['danh-muc-dich-vu/(:num)(:any)/page/(:num)'] = 'service/category/$1/$2';
-$route['xem-dich-vu/(:num)(:any)'] = 'service/detail/$1';
-
-$route['tim-kiem'] = 'product/search';
-$route['tim-kiem/?key=(:any)&page(:num)'] = 'product/search/?key=$1&page=$2';
-
-
+ 
 $route['404_override'] = '';
 
 

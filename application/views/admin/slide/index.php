@@ -42,7 +42,7 @@
 
                                     <td class="left" style="width: 10%;"><?= $user['name']; ?></td>
 
-                                    <td class="left" style="width: 10%;"><img src="<? echo base_url().$user['img'];?>" alt="tin tuc" width="100" height="100"/></td>
+                                    <td class="left" style="width: 10%;"><img src="<?php echo base_url().$user['img'];?>" alt="tin tuc" width="100" height="100"/></td>
 
                                     <td class="left" style="width: 35%;"><?= $user['contents']; ?></td>
                                     <td class="left" style="width: 10%;"><?= $user['url']; ?></td>

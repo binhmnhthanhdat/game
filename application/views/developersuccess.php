@@ -7,7 +7,7 @@
     <div class="container-contact100">
         <div class="wrap-contact100">
             <form class="contact100-form validate-form"  action=" <?php echo base_url(); ?>send-lien-he" method="post" >
-                <span class="contact100-form-title">
+                <span class="contact100-form-title FontSemiBold">
                     We’d love to hear from you.
                 </span>
                 <p style="padding-bottom: 20px">

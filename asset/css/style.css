@@ -869,7 +869,7 @@ img.maxWidth {
     width: 74px;
 }
 .logo:hover {
-    background-position: 0 -58px;
+    //background-position: 0 -58px;
 }
 .logo.white {
     background-position: 0 -116px !important;
@@ -1363,7 +1363,7 @@ a#footerLogo {
     width: 185px;
 }
 a#footerLogo:hover {
-    background-position: 0 -86px;
+    //background-position: 0 -86px;
 }
 
 #footerBottom .spacer {

@@ -67,9 +67,9 @@
 
 <?php if (!empty($apiTwitter)) : ?> 
     <div class="tMar60 row">
-        <h2 class="MontserratMedium smallTitle bold uppercase hasBorder" style="font-size: 12px !important">What we&#039;ve been up to</h2>
+        <h2 class="MontserratMedium smallTitle bold uppercase hasBorder" >What we&#039;ve been up to</h2>
         <div id="dragTip" class="bold uppercase grey centreText hidden-xxs">&lt; Drag</div>
-        <div id="twitterFeed" class=" MontserratLight negMar10 bMar20 font0">
+        <div id="twitterFeed" class=" MontserratLight negMar10 bMar20 font0" style="font-size: 12px !important">
             <?php foreach ($apiTwitter as $iapiTwitter) : ?>
                 <div class="tweetWrapper lPad10 rPad10" data-id="<?php echo $iapiTwitter['id_str']; ?>">
                     <?php if (isset($iapiTwitter['entities']['media'][0]['media_url'])) { ?> 

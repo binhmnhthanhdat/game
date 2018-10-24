@@ -44,6 +44,7 @@ if (!defined('BASEPATH'))
 $route['default_controller'] = "home";
 $route['trang-chu'] = 'home';
 $route['policy'] = 'home/policy';
+$route['api'] = 'home/api';
 $route['about'] = 'home/about';
 $route['work'] = 'home/work';
 $route['work/(:any)'] = 'home/detaiwork/$1';

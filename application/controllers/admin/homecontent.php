@@ -93,7 +93,7 @@ class Homecontent extends Admin_controller {
         $this->form_validation->set_rules('title', 'title', 'trim|required');
         $data['title'] = $this->input->post('title');
         $data['url'] = $this->input->post('url');
-        $data['content'] = $this->input->post('content');
+        $data['content'] = $this->input->post('description');
         $data['margin'] = $this->input->post('margin');
         $data['type'] = $this->input->post('type');
         $data['ord'] = $this->input->post('ord');

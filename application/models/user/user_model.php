@@ -4,11 +4,11 @@ if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Model User
   # Extends CI_Model
-  # Author: Nguyen Duc Hung - http://tinagroup.net
-  # Create date: 28/04/2011
+  # Author: Vũ Văn Bình
+  # Create date: 28/09/2018
   ------------------------------------------------ */
 
 class User_model extends CI_Model {

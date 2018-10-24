@@ -1,25 +1,22 @@
 <?php
-//tat ca cai nay dung de cau hinh cho ckeditter
 $config_mini = array();
 
 $config_mini['toolbar'] = array(
     array('Source', '-', 'Bold', 'Italic', 'Underline', 'Strike', '-', 'Link', 'Unlink', 'Anchor', 'Image')
 );
 
-// B?n có th? dùng m?ng full tùy ch?n
+
 $config_mini = array(
     array('Source', '-', 'Bold', 'Italic', 'Underline', '-', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', '-', 'NumberedList', 'BulletedList'));
-//---- Ho?c tùy bi?n kích thu?c
+
 //  $this->ckeditor->config['width'] = '730px';
 //        $this->ckeditor->config['height'] = '300px';
 
-/* Y la configuración del kcfinder, la debemos poner así si estamos trabajando en local */
+
 $config_mini['filebrowserBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.html";
 $config_mini['filebrowserImageBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.html?type=Images";
 $config_mini['filebrowserUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
 $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
-
-//ket thuc cau hinh cho ckediter
 ?>
 <div id="content">
     <div class="breadcrumb">
@@ -107,7 +104,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                 <td width="169" align="left"><label>Thứ tự:</label></td>
                                 <td width="922">
                                     <?php if (@$article->ord != '') : ?>
-                                    <input name="ord" type="text" id="ord" value="<?php echo @$article->ord; ?>" size="100" readonly="true"/>
+                                        <input name="ord" type="text" id="ord" value="<?php echo @$article->ord; ?>" size="100" readonly="true"/>
                                     <?php else : ?>
                                         <input name="ord" type="text" id="url" value="<?php echo set_value('ord'); ?>" size="100" readonly="true"/>
                                     <?php endif; ?>

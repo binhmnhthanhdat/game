@@ -41,7 +41,7 @@
                                     <td class="left"><?= $user['subject']; ?></td>
                                     <td class="left"><?= $user['mesage']; ?></td>
                                     <td class="left"><?= $user['service']; ?></td>
-                                    <td class="left"><a href="<?= base_url().$user['fileupload']; ?>">Tại đây</a></td>
+                                    <td class="left"><a href="<?= base_url() . $user['fileupload']; ?>">Tại đây</a></td>
                                     <td class="left"><?= $user['time']; ?></td>
                                     <td class="right">
                                         <a href="<?= $user['url_del']; ?>" title="Xóa Develop này" id="action_del_<?= $user['id']; ?>" onclick="do_del(<?= $user['id']; ?>); return false;">Delete</a>

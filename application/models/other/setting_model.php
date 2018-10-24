@@ -4,10 +4,10 @@ if (!defined('BASEPATH'))
     exit('Woa...Not Find System Folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Model Setting
   # Extends CI_Model
-  # Author: Nguyen Duc Hung - http://tinagroup.net
+  # Author: Vũ Văn Bình
   # Create date: 26/04/2011
   ------------------------------------------------ */
 
@@ -17,7 +17,7 @@ class Setting_model extends CI_Model {
 
     function __construct() {
         parent:: __construct();
-        $language=$this->session->userdata('language');
+        $language = $this->session->userdata('language');
         if ($language == 'vi') {
             $this->table = 'setting_vi';
         }
@@ -31,7 +31,7 @@ class Setting_model extends CI_Model {
         $this->db->set('meta_desc', $data['meta_desc']);
         //$this->db->set('site_status', $data['site_status']);
         $this->db->set('footer', $data['footer']);
-          if ($this->db->update($this->table)) {
+        if ($this->db->update($this->table)) {
             return TRUE;
         } else {
             return FALSE;

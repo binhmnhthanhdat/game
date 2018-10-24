@@ -96,12 +96,12 @@
                                         else
                                             echo "Tin Tuyển dụng";
                                         ?></td>
-                                    <td class="left"><?php if ($new->image !== '') { ?> <img src="<?php echo base_url().$new->image; ?>" alt="tin tuc"  width="100" height="100" /><?php } ?></td>
+                                    <td class="left"><?php if ($new->image !== '') { ?> <img src="<?php echo base_url() . $new->image; ?>" alt="tin tuc"  width="100" height="100" /><?php } ?></td>
                                     <td class="left"><?php echo mdate('%d/%m/%Y', $new->create_date); ?></td>
                                     <td class="left"><?php echo mdate('%d/%m/%Y', $new->modify_date); ?></td>
                                     <td class="right">
                                         <a href="<?= $url_edit; ?>/<?= $new->id; ?>">Edit</a> :: <a href="<?= $url_del; ?>/<?= $new->id; ?>" title="Xóa User này" id="action_del_<?= $new->id; ?>" onclick="do_del(<?= $new->id; ?>);
-                                                return false;">Delete</a>
+                                                        return false;">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

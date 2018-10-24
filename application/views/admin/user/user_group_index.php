@@ -34,7 +34,7 @@
                                     <td class="left"><?= $n['group_name']; ?></td>
                                     <td class="right">
                                         <a href="<?= $n['url_edit']; ?>">Edit</a> :: <a href="<?= $n['url_del']; ?>" title="Xóa User này" id="action_del_<?= $n['group_id']; ?>" onclick="do_del(<?= $n['group_id']; ?>);
-                                                return false;">Delete</a>
+                                                        return false;">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

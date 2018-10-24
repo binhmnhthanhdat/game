@@ -4,21 +4,21 @@ if (!defined('BASEPATH'))
     exit('Woa...Not Find System Folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Model Category
   # Extends CI_Model
-  # Author: Nguyen Duc Hung - http://tinagroup.net
+  # Author: Vũ Văn Bình
   # Create date: 26/04/2011
   ------------------------------------------------ */
 
 class Cat_news_model extends CI_Model {
-    
+
     var $table = 'cat_news';
 
     function __construct() {
 
         parent:: __construct();
-        $language=$this->session->userdata('language');
+        $language = $this->session->userdata('language');
         if ($language == 'vi') {
             $this->table = 'cat_news_vi';
         }

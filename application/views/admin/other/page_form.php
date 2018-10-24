@@ -1,3 +1,23 @@
+<?php
+$config_mini = array();
+
+$config_mini['toolbar'] = array(
+    array('Source', '-', 'Bold', 'Italic', 'Underline', 'Strike', '-', 'Link', 'Unlink', 'Anchor', 'Image')
+);
+
+
+$config_mini = array(
+    array('Source', '-', 'Bold', 'Italic', 'Underline', '-', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo', '-', 'NumberedList', 'BulletedList'));
+
+$this->ckeditor->config['width'] = '800px';
+$this->ckeditor->config['height'] = '300px';
+
+
+$config_mini['filebrowserBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.html";
+$config_mini['filebrowserImageBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.html?type=Images";
+$config_mini['filebrowserUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
+$config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
+?>
 <div id="content">
     <div class="breadcrumb">
         <?php if ($render_path) : ?>
@@ -27,13 +47,16 @@
                     <table width="100%" class="form">
                         <tbody>
                             <tr>
-                                <td width="169" align="left"><label>Nội dung:</label></td>
+                                <td width="169" align="left"><label>Policy: </label><br><span class="help">Mô tả thông tin chi tiết</span></label></td>
                                 <td width="922">
-                                    <textarea id="info" name="info" rows="30"><?= $nd; ?></textarea>
-                                    <?= form_error('Content'); ?>
+                                    <?php if ($nd != '') : ?>
+                                        <?php echo $this->ckeditor->editor("description", $nd, $config_mini); ?>
+                                    <?php else : ?>
+                                        <?php echo $this->ckeditor->editor("description", "", $config_mini); ?>
+                                    <?php endif; ?>
+                                    <?= form_error('description'); ?>
                                 </td>
                             </tr>
-
                         </tbody>
                     </table>
                 </div>

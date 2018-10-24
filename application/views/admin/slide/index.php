@@ -42,7 +42,7 @@
 
                                     <td class="left" style="width: 10%;"><?= $user['name']; ?></td>
 
-                                    <td class="left" style="width: 10%;"><img src="<?php echo base_url().$user['img'];?>" alt="tin tuc" width="100" height="100"/></td>
+                                    <td class="left" style="width: 10%;"><img src="<?php echo base_url() . $user['img']; ?>" alt="tin tuc" width="100" height="100"/></td>
 
                                     <td class="left" style="width: 35%;"><?= $user['contents']; ?></td>
                                     <td class="left" style="width: 10%;"><?= $user['url']; ?></td>
@@ -56,7 +56,7 @@
 
                                     <td class="right" style="width: 10%;">
                                         <a href="<?= $user['url_edit']; ?>">Edit</a> :: <a href="<?= $user['url_del']; ?>" title="Xóa User này" id="action_del_<?= $user['id']; ?>" onclick="do_del(<?= $user['id']; ?>);
-                                                return false;">Delete</a>
+                                                        return false;">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

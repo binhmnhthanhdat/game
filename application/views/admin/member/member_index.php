@@ -92,7 +92,7 @@
                                 <td><?= $row->create_date; ?></td>
                                 <td>
                                     <a href="<?= $this->index_url . 'member/delete/' . $row->mem_id; ?>" title="Xóa bản tin này" id="action_del_<?= $row->mem_id; ?>" onclick="do_del(<?= $row->mem_id; ?>);
-                                            return false;"><img src="<?= $this->index_url; ?>layout/admin/images/disabled.png" width="16" height="16" border="0" align="absmiddle" /> &nbsp;</a>                  
+                                                    return false;"><img src="<?= $this->index_url; ?>layout/admin/images/disabled.png" width="16" height="16" border="0" align="absmiddle" /> &nbsp;</a>                  
                                 </td>
 
                             </tr>

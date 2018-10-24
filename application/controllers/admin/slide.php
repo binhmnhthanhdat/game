@@ -4,10 +4,10 @@ if (!defined('BASEPATH'))
     exit('Woa...Not find system folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # slide controller
   # Extends CI_Controller
-  # Author: Nguyen Duc Hung - http://tinagroup.net
+  # Author: Vũ Văn Bình
   # Create date: 02/05/2011
   ------------------------------------------------ */
 require_once APPPATH . 'third_party/admin_controller' . EXT;
@@ -113,7 +113,7 @@ class Slide extends Admin_controller {
             $this->load->library('upload', $config);
             $this->upload->do_upload();
             $image_data = $this->upload->data();
-        
+
             if ($image_data['file_name'] != '') {
                 if ($oldImage != '') {
                     $this->deleteFile($oldImage);

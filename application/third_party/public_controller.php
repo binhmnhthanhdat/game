@@ -4,11 +4,11 @@ if (!defined('BASEPATH'))
     exit('Woa...Not find system folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Public_controller
   # Extends CI_Controller
-  # Author: Nguyen Duc Hung - http://tinagroup.net
-  # Create date: 28/04/2011
+  # Author: Vũ Văn Bình
+  # Create date: 28/09/2018
   ------------------------------------------------ */
 
 class Public_controller extends CI_Controller {
@@ -21,7 +21,7 @@ class Public_controller extends CI_Controller {
 
         $this->load->library('util');
         $this->load->helper('date');
- 
+
         $this->load->model('cat_news/cat_news_model', 'cat_news');
         $this->load->model('slide/slide_model', 'slide');
         $this->load->model('other/setting_model', 'setting');
@@ -69,7 +69,7 @@ class Public_controller extends CI_Controller {
       ================================================== */
 
     function render($content, $layout) {
-        
+
         $data['header'] = $this->headers();
         $data['footer'] = $this->footer();
         $data['content'] = $content;

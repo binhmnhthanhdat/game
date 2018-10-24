@@ -67,7 +67,7 @@
                                         ?></td>
                                     <td class="right">
                                         <a href="<?= $user['url_edit']; ?>">Edit</a> :: <a href="<?= $user['url_del']; ?>" title="Xóa User này" id="action_del_<?= $user['id']; ?>" onclick="do_del(<?= $user['id']; ?>);
-                                                return false;">Delete</a>
+                                                        return false;">Delete</a>
                                     </td>
 
                                 </tr>

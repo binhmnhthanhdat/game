@@ -35,7 +35,11 @@
                                 <tr>
                                     <td style="text-align:center"><input type="checkbox" name="selected[]" value="<?= $user['id']; ?>" /></td>
                                     <td class="left"><?php echo $user['name']; ?></td>
-                                    <td class="left"><?php if ($user['margin'] == 1 ) echo "Trái" ; else echo "Phải"; ?></td>
+                                    <td class="left"><?php if ($user['margin'] == 1)
+                            echo "Trái";
+                        else
+                            echo "Phải";
+                        ?></td>
                                     <td class="right"><?= $user['ord']; ?></td>
 
                                     <td class="right">
@@ -47,11 +51,11 @@
                                         ?></td>
                                     <td class="right">
                                         <a href="<?= $user['url_edit']; ?>">Edit</a> :: <a href="<?= $user['url_del']; ?>" title="Xóa User này" id="action_del_<?= $user['id']; ?>" onclick="do_del(<?= $user['id']; ?>);
-                                                return false;">Delete</a>
+                                                        return false;">Delete</a>
                                     </td>
 
                                 </tr>
-                            <?php endforeach; ?>
+    <?php endforeach; ?>
 <?php endif; ?>
                     </tbody>
                 </table>

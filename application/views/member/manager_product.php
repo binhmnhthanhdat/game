@@ -80,24 +80,24 @@
                                 ?></td>
                             <td><?= $pro->create_date; ?></td>
                             <td align="center"><a href="#" onclick="up_pro(<?= $pro->id; ?>);
-                                    return false;" title="Up sản phẩm này lên"><img src="<?= base_url(); ?>layout/images/up.png" width="16" height="16" border="0" align="absmiddle" /> &nbsp;</a></td>
+                                            return false;" title="Up sản phẩm này lên"><img src="<?= base_url(); ?>layout/images/up.png" width="16" height="16" border="0" align="absmiddle" /> &nbsp;</a></td>
                             <td align="center"><?= $pro->num_view; ?></td>
                             <td align="center">
                                 <a href="<?= $this->index; ?>member/del_product/<?= $pro->id; ?>" title="Xóa bản tin này"><img src="<?= base_url(); ?>layout/admin/images/disabled.png" width="16" height="16" border="0" align="absmiddle" /> &nbsp;</a>
                                 <a href="<?= $this->index; ?>member/edit_product/<?= $pro->id; ?>" title="Sửa bản tin này"><img src="<?= base_url(); ?>layout/admin/images/edit16.png" border="0" align="absmiddle" /></a>            </td>
                         </tr>
                     <?php endforeach; ?>
-<?php } else { ?>
+                <?php } else { ?>
                     <tr>
                         <td colspan="6" align="center">Chưa có bài viết nào</td>
                     </tr>
-<?php } ?>
+                <?php } ?>
             </tbody>
         </table>
-            <?php if ($page) : ?>		
+        <?php if ($page) : ?>		
             <div class="pagination">
-            <?php echo $page; ?>
+                <?php echo $page; ?>
             </div>
-<?php endif; ?>
+        <?php endif; ?>
     </div>
 </div>

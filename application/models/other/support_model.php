@@ -4,11 +4,11 @@ if (!defined('BASEPATH'))
     exit('Woa...Not Find System Folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Model Support Nickname
   # Extends CI_Model
-  # Author: Nguyen Duc Hung - http://tinagroup.net
-  # Create date: 28/04/2011
+  # Author: Vũ Văn Bình
+  # Create date: 28/09/2018
   ------------------------------------------------ */
 
 class Support_model extends CI_Model {

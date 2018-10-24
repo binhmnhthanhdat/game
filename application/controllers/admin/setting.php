@@ -4,10 +4,10 @@ if (!defined('BASEPATH'))
     exit('Woa...Not find system folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Setting controller
   # Extends CI_Controller
-  # Author: Nguyen Duc Hung - http://tinagroup.net
+  # Author: Vũ Văn Bình
   # Create date: 30/04/2011
   ------------------------------------------------ */
 require_once APPPATH . 'third_party/admin_controller' . EXT;
@@ -36,7 +36,7 @@ class Setting extends Admin_controller {
         $data['site_name'] = $this->input->post('site_title');
         $data['meta_key'] = $this->input->post('meta_key');
         $data['meta_desc'] = $this->input->post('meta_desc');
-        
+
         $data['footer'] = $this->input->post('description');
         $action = $this->input->post('_action');
 

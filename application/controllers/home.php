@@ -4,11 +4,11 @@ if (!defined('BASEPATH'))
     exit('Woa...Not find system folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Home Controler
   # Extends CI_Controller
-  # Author: Nguyen Duc Hung - http://tinagroup.net
-  # Create date: 28/04/2011
+  # Author: Vũ Văn Bình
+  # Create date: 28/09/2018
   ------------------------------------------------ */
 require_once APPPATH . 'third_party/public_controller' . EXT;
 require_once APPPATH . 'third_party/TwitterAPIExchange.php';
@@ -58,7 +58,6 @@ class Home extends Public_controller {
         $data = array();
         $uri = $this->uri->segment(1);
         $cats = $this->cat_news->get_cat_news_where(array('active' => 1, 'link' => $uri), array('ord' => 'asc'), null)->result();
-        $team = $this->team->get_team_where(null, array('ord' => 'asc'), null)->result();
         $data['news'] = $this->tin->getList(null, array('type' => 1), array('id' => 'asc'), null)->result();
         $data['parttent'] = $this->parttent->get_parttent_where(array('active' => 1), array('ord' => 'asc'), null)->result();
         $data['gallery'] = $this->slide->get_slide_where(array('active' => 1), array('ord' => 'asc'), null)->result();
@@ -130,6 +129,13 @@ class Home extends Public_controller {
 
     public function policy() {
         $data = array();
+        $table = 'policy';
+        $language = $this->session->userdata('language');
+        if ($language == 'vi') {
+            $table = 'policy_vi';
+        }
+        $q = $this->db->get($table)->row();
+        $data['content'] = $q->content;
         $this->site_title = 'Policy';
         $this->render($this->load->view('policy', $data, TRUE), '3col');
     }
@@ -160,50 +166,4 @@ class Home extends Public_controller {
             redirect('/developersuccess');
         }
     }
-
-    function api() {
-        $settings = array(
-            'oauth_access_token' => "1040285490782527488-gUJb9sPoBYSUJlx2Br8AwpPiFBVC5F",
-            'oauth_access_token_secret' => "hZRxNnkXkB8JNtkByztP2lsePqYs8IsHtinzp7rBeWQqt",
-            'consumer_key' => "NpcIXuxJWm4E1lBhebkM456Pz",
-            'consumer_secret' => "Pn5ns2vUPRxoX0b1xRVEIjqD0tWlWQExEahIeKZBr4z33wxB0k"
-        );
-        $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
-        $requestMethod = "GET";
-        if (isset($_GET['user'])) {
-            $user = $_GET['user'];
-        } else {
-            $user = "iagdotme";
-        }
-        if (isset($_GET['count'])) {
-            $count = $_GET['count'];
-        } else {
-            $count = 20;
-        }
-        //$getfield = "?screen_name=$user&count=$count";
-        $getfield = "?count=$count";
-        $twitter = new TwitterAPIExchange($settings);
-        $string = json_decode($twitter->setGetfield($getfield)
-                        ->buildOauth($url, $requestMethod)
-                        ->performRequest(), $assoc = TRUE);
-        if (array_key_exists("errors", $string)) {
-            echo "<h3>Sorry, there was a problem.</h3><p>Twitter returned the following error message:</p><p><em>" . $string[errors][0]["message"] . "</em></p>";
-            exit();
-        }
-        echo "<pre>";
-        foreach ($string as $items) {
-            echo "Time and Date of Tweet: " . $items['created_at'] . "<br />";
-            echo "Tweet: " . $items['text'] . "<br />";
-            echo "Tweeted by: " . $items['user']['name'] . "<br />";
-            echo "Screen name: " . $items['user']['screen_name'] . "<br />";
-            echo "Followers: " . $items['user']['followers_count'] . "<br />";
-            echo "Friends: " . $items['user']['friends_count'] . "<br />";
-            echo "Listed: " . $items['user']['listed_count'] . "<br /><hr />";
-            if (isset($items['entities']['media'][0]['media_url']))
-                echo "<img src = '" . $items['entities']['media'][0]['media_url'] . "' width = '184' /><br /><hr />";
-            //print_r($items);
-        }
-        echo "</pre>";
-    }
-
 }

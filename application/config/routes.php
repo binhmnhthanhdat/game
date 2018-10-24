@@ -56,7 +56,7 @@ $route['language/(:any)'] = 'home/language/$1';
 $route['developer'] = 'home/developer';
 $route['developersubmit'] = 'home/developersubmit';
 $route['developersuccess'] = 'home/developersuccess';
- 
+
 $route['404_override'] = '';
 
 

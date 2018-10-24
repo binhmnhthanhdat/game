@@ -4,11 +4,11 @@ if (!defined('BASEPATH'))
     exit('Woa...Not find system folder');
 
 /* -----------------------------------------------
-  # Rao_vat version 1.0
+  # Email: binhminhthanhdat@gmail.com
   # Admin_controller
   # Extends CI_Controller
-  # Author: Nguyen Duc Hung - http://tinagroup.net
-  # Create date: 28/04/2011
+  # Author: Vũ Văn Bình
+  # Create date: 28/09/2018
   ------------------------------------------------ */
 
 class Admin_controller extends CI_Controller {

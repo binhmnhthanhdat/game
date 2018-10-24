@@ -42,7 +42,7 @@
                                     <td class="right"><?= @$user['group_name']; ?></td>
                                     <td class="right">
                                         <a href="#">Edit</a> :: <a href="<?= $user['url_del']; ?>" title="Xóa User này" id="action_del_<?= $user['user_id']; ?>" onclick="do_del(<?= $user['user_id']; ?>);
-                                                return false;">Delete</a>
+                                                        return false;">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

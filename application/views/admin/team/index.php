@@ -93,7 +93,7 @@
 
                                     <td class="right">
                                         <a href="<?= $url_edit; ?>/<?= $team->id; ?>">Edit</a> :: <a href="<?= $url_del; ?>/<?= $team->id; ?>" title="Xóa User này" id="action_del_<?= $team->id; ?>" onclick="do_del(<?= $team->id; ?>);
-                                                return false;">Delete</a>
+                                                        return false;">Delete</a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

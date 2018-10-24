@@ -1,5 +1,5 @@
 <?php if (!empty($cats)) : ?>
-<?php echo $cats[0]->content; ?>
+    <?php echo $cats[0]->content; ?>
 <?php endif; ?>
 <div class="row">
     <h2 class="smallTitle bold uppercase hasBorder">Current vacancies</h2>

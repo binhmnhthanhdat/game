@@ -10,8 +10,6 @@ $config_mini['filebrowserBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.
 $config_mini['filebrowserImageBrowseUrl'] = base_url() . "ckeditor/ckfinder/ckfinder.html?type=Images";
 $config_mini['filebrowserUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files";
 $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Images";
-
-//ket thuc cau hinh cho ckediter
 ?>
 <div id="content">
     <div class="breadcrumb">
@@ -52,7 +50,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('name'); ?>
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td width="169" align="left"><label>Vị trí (so với logo) :</label></td>
                                 <td width="922">
@@ -64,7 +62,7 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     <?= form_error('margin'); ?>
                                 </td>
                             </tr>
-                            
+
                             <tr>
                                 <td width="169" align="left"><label>Giới thiệu:</label><br><span class="help">Mô tả thông tin chi tiết</span></label></td>
                                 <td width="922">
@@ -108,10 +106,10 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                                     else
                                         "";
                                     ?>/>
-                                    <?= form_error('active'); ?>
+                                           <?= form_error('active'); ?>
                                 </td>
                             </tr>
-                             
+
 
                         </tbody>
                     </table>

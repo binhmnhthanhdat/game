@@ -10,7 +10,7 @@
             <span class="contact100-form-title FontSemiBold">
                 We’d love to hear from you.
             </span>
-            <p class = "MontserratMedium" style="padding-bottom: 20px;font-size: 19px;">
+            <p class = "MontserratMedium" style="padding-bottom: 20px;font-size: 19px !important;">
                 Whether you are looking for more information on game submission, or have general inquiries, fill out the form below and we’ll get back with you shortly.
             </p>
             <p></p>

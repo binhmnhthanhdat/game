@@ -12,8 +12,8 @@ Author URI: http://www.thisisforge.com/
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+/*    margin: 0;
+    padding: 0;*/
 }
 
 *:focus {
@@ -24,9 +24,9 @@ html, body {
     -webkit-text-size-adjust: 100%;
 }
 
-ul, ol, li {
+/*ul, ol, li {
     list-style: none;
-}
+}*/
 @font-face{
     font-family: FontMenu;
     src: url(../../fonts/Montserrat-ExtraBold.ttf);
@@ -710,7 +710,7 @@ ul, ol, li {
 }
 
 /* Typography */
-html, body, h1, h2, h3, h4, h5, h6, .vCentre, .fontReset {
+/*html, body, h1, h2, h3, h4, h5, h6, .vCentre, .fontReset {
     font-size: 12px;
 }
 
@@ -727,7 +727,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
     line-height: 1.7em;
     margin: 0 0 1em;
-}
+}*/
 
 .sans {
     font-family: FontMedium, sofia-pro-n4, sofia-pro, Arial, Helvetica, sans-serif;
@@ -736,21 +736,21 @@ p {
 .MontserratMedium {
     font-family: FontMedium;
     font-weight: normal;
-    font-size: 24px;
+    font-size: 24px !important;
 }
 
 .MontserratLight {
     font-family: FontLight;
     font-weight: normal;
-    font-size: 19px;
+    font-size: 19px !important;
 }
 .FontSemiBold {
     font-family: FontSemiBold;
     font-weight: normal;
-    font-size: 40px;
+    font-size: 40px !important;
 }
 .bold {
-    
+
     font-weight: bold;
 }
 
@@ -766,17 +766,17 @@ p {
 }
 
 .sectionTitle {
-    font-size: 28px;
+   // font-size: 28px;
     margin: 0 0 0.8em;
 }
 
 .subtitle {
-    font-size: 19px;
+    font-size: 24px;
     margin: 0 0 0.8em;
 }
 
 .smallTitle {
-/*    font-size: 9px;*/
+    /*    font-size: 9px;*/
     letter-spacing: 0.2em;
     margin: 0 0 1em;
 }

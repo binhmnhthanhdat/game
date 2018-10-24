@@ -43,10 +43,7 @@
         </style>
         <script type='text/javascript' src='<?php echo base_url(); ?>asset/js/jquery.min.js'></script>
         <script type='text/javascript' src='<?php echo base_url(); ?>asset/js/external-tracking.min.js'></script>
-        <link rel="canonical" href="http://test" />
-        <link rel='shortlink' href='http://test' />
-
-
+        
         <link href="<?php echo base_url(); ?>asset/css/style.css" rel="stylesheet">
         <link href="<?php echo base_url(); ?>asset/css/slick.css" rel="stylesheet">
         <script src="<?php echo base_url(); ?>asset/js/js."></script>

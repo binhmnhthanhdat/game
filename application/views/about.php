@@ -20,7 +20,7 @@
                     <img class="fullWidth bMar20" src="<?php echo base_url() . $iteam->image; ?>" alt="<?php echo $iteam->name; ?>">
                     <h3 class="subtitle sans hasBorder" style="font-size: 20px !important"><?php echo $iteam->name; ?><br>
                         <span class="grey"><?php echo $iteam->position; ?></span></h3>
-                    <div class="maxWidth480 cmsContent ">
+                    <div class="maxWidth480 cmsContent " style="font-size: 13px !important">
                         <?php echo $iteam->description; ?>
                     </div>
                 </div>

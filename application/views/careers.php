@@ -12,7 +12,7 @@
             <div class="row bPad40 tPad40 clearFix">
                 <div class="col-6 col-sm-12 rPad40">
                     <h3 class="subtitle sans hasBorder"><?php echo $irecruit->title; ?>We want to hear from you</h3>
-                    <p><?php echo $irecruit->create_date; ?></p>
+                    <p><?php echo date("Y-m-d H:i:s", $irecruit->create_date);; ?></p>
                 </div>
                 <div class="col-6 col-sm-12">
                     <div class="maxWidth480 cmsContent">

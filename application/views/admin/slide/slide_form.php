@@ -60,7 +60,8 @@ $config_mini['filebrowserImageUploadUrl'] = base_url() . "ckeditor/ckfinder/core
                             <tr>
                                 <td width="169" align="left"><label>Hình ảnh:</label></td>
                                 <td width="922">
-                                    <?    echo form_upload('userfile'); ?> <br>
+
+                                    <?php     echo form_upload('userfile'); ?> <br>
                                     <?php if (@$article->img != '') : ?>
                                         <img src="<?= base_url(); ?><?= @@$article->img; ?>" width="200" height="200">
                                     <?php endif; ?>   

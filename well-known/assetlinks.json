@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.EvilAgel.BouncingBall",
+    "sha256_cert_fingerprints":
+    ["80:C2:75:70:83:FD:35:36:1F:CB:6C:5E:60:8D:DF:A9:1D:C9:4B:C0:3F:D3:2A:D2:93:29:B5:33:F0:38:C4:D9"]
+  }
+}]
